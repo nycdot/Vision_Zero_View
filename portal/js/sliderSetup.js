@@ -1,11 +1,12 @@
 
 			   $(document).ready(function () {
-			   	 $("#sliderDiv").css("display", "none"); 
+			  // 	 $("#sliderDiv").css("display", "none"); 
+			   	
                 $("#jqxslider").jqxSlider({
                     theme: 'bootstrap',
                     value: 0,
                     min: 0,
-                    max: 67,  // ticks until Aug 2014, will need updating
+                    max: 68,  // ticks until Aug 2014, will need updating
                     mode: "fixed",
                     step: 1,
                     ticksFrequency: 1,
@@ -20,7 +21,8 @@
                         $(lowerTicks[i]).css("display", "none");
                     };
                 };
-                 $("#sliderDiv").css("display", "block");  
+              //  $("#sliderDiv").css("display", "block");  
+               //  $(".jqx-slider-tickscontainer").css("display", "block"); 
 			});
 			
 				$(document).ready(function () {

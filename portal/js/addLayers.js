@@ -152,6 +152,13 @@ function checkOutreachBtns(outreachLayerIDs) {
 
 	}
 	
+	if (hasClass('HandsOnSafetyDemosBtn', 'active')) {
+
+		var locID = 6;
+		outreachLayerIDs.push(locID);
+
+	}
+	
 	if(outreachLayerIDs.length === 0){
 	
 	  outreachLayerIDs.push(-1);

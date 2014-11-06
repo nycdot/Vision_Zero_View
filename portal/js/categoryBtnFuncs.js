@@ -30,11 +30,13 @@ function hideLoading() {
 function hideSlider() {
 
     $("#sliderDiv").hide();
+     $(".jqx-slider-tickscontainer").hide(); 
 
 }
 
 function showSlider() {
     $("#sliderDiv").show();
+    $(".jqx-slider-tickscontainer").show(); 
     $("#sliderDiv").css("opacity", 1);
 
 }
@@ -85,6 +87,9 @@ function CategoryNav(id) {
     var _layerURL, _layerID;
 
     if (id == "summaryCat") {
+    	$("#sumLegendDiv").css("display", "block");
+    	//$("#injurySumLegend").css("display", "none");
+		//$("#fatalitySumLegend").css("display", "none");
 
         _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/SUMMARY_2014_INJURIES/MapServer";
         _layerID = "summaryInjuryLayer";

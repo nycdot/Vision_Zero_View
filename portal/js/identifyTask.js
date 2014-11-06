@@ -3,7 +3,7 @@ function IdentifyTaskInit() {
        
 
               allIdentifyParams = new esri.tasks.IdentifyParameters();
-              allIdentifyParams.tolerance = 7;
+              allIdentifyParams.tolerance = 10;
               allIdentifyParams.returnGeometry = true;
               allIdentifyParams.layerOption = esri.tasks.IdentifyParameters.LAYER_OPTION_TOP;
               allIdentifyParams.width = map.width;
@@ -94,12 +94,13 @@ function executeIdentifyTask(evt) {
                            else if (ped)
                                   deferred = injury_monthly_ped_IdentifyTask.execute(allIdentifyParams);
                            else if (motor)
-                   deferred = injury_monthly_motor_IdentifyTask.execute(allIdentifyParams);
+                   					deferred = injury_monthly_motor_IdentifyTask.execute(allIdentifyParams);
                            else if (bike)
                                   deferred = injury_monthly_bike_IdentifyTask.execute(allIdentifyParams);
                      }
 
                      deferred.addCallback(function(response) {
+                     	//console.log ("response length : " + response.length);
 
                            if (response.length > 0) {
                                   map.infoWindow.show(evt.mapPoint);
@@ -108,8 +109,11 @@ function executeIdentifyTask(evt) {
                            }
 
                            return dojo.map(response, function(result) {
-                                  var feature = result.feature;
+                                 var feature = result.feature;
+                             //     console.log("how many : " + feature.length);
+                                   
                                   var locName = result.layerName;
+                                  console.log("layername : " + locName);
                                   var split, locParse;
                                   if (monthly){
                                          split = locName.split("_"); 
@@ -125,30 +129,82 @@ function executeIdentifyTask(evt) {
                                   else if (yearly)
                                          var locDate = slider2Lookup(locSliderVal);
                                   var locTxt;
-
+                                  
                                   if ((locParse == "injuries")||(locParse == "I")) {
-                                         if (yearly) {
+                                  	if (all){
+                                        // if (yearly) 
+                                         {
                                          locTxt = "<table><tr><td><b>Total Injuries: </b>" + "&nbsp;" + " </td><td>${Injuries}</td></tr></table>";
-                                         locTxt += "<table><tr><td><b>Non-Injury Crashes: </b>" + "&nbsp;" + "</td><td> ${NonInjuryCrashes}</td></tr></table>";
+                                   
                                          }
-                                         else if (monthly){
+                                      /*   else if (monthly){
                                          locTxt = "<table><tr><td><b>Total Injuries: </b>" + "&nbsp; " + "</td><td>  ${Injuries}</td></tr></table>";
-                                         locTxt += "<table><tr><td><b>Non-Injury Crashes: </b>" + "&nbsp; " + " </td><td> ${NonInjuryCrashes}</td></tr></table>";
+                                     
+                                         }*/
+                                   	} else if (ped){
+                                         
+                                       // if (yearly) 
+                                        {
+                                         locTxt = "<table><tr><td><b>Pedestrian Injuries: </b>" + "&nbsp;" + " </td><td>${PedInjuries}</td></tr></table>";
+                                   
                                          }
-                                  } else if ((locParse == "fatalities" )||(locParse == "F" )) {
-                                         if (yearly) {
+                                        /* else if (monthly){
+                                         locTxt = "<table><tr><td><b>Total Injuries: </b>" + "&nbsp; " + "</td><td>  ${Injuries}</td></tr></table>";
+                                     
+                                         }*/
+                                   	} else if (motor){
+                                         
+                                        // if (yearly) 
+                                         {
+                                         locTxt = "<table><tr><td><b>Motorist Injuries: </b>" + "&nbsp;" + " </td><td>${MVOInjuries}</td></tr></table>";
+                                   
+                                         }
+                                       /*  else if (monthly){
+                                         locTxt = "<table><tr><td><b>Total Injuries: </b>" + "&nbsp; " + "</td><td>  ${Injuries}</td></tr></table>";
+                                     
+                                         }*/
+                                   	} else if (bike){
+                                         
+                                         //if (yearly) 
+                                         {
+                                         locTxt = "<table><tr><td><b>Cyclist Injuries: </b>" + "&nbsp;" + " </td><td>${BikeInjuries}</td></tr></table>";
+                                   
+                                         }
+                                        /* else if (monthly){
+                                         locTxt = "<table><tr><td><b>Total Injuries: </b>" + "&nbsp; " + "</td><td>  ${Injuries}</td></tr></table>";
+                                     
+                                         }*/
+                                   }
+                                  }  if ((locParse == "fatalities" )||(locParse == "F" )) {
+                                         if (all) {
+                                         locTxt = "<table><tr><td><b>Total Fatalities: </b></td><td>" + "&nbsp; " + "  ${Fatalities}</td></tr></table>";
+                                        locTxt += "<table><tr><td><b>Total Injuries: </b></td><td>" + "&nbsp; " + "  ${Injuries}</td></tr></table>";
+                                       
+                                         }
+                                         else if (motor) {
+                                         locTxt = "<table><tr><td><b>Motorist Fatalities: </b></td><td>" + "&nbsp; " + "  ${MVOFatalities}</td></tr></table>";
+                                        locTxt += "<table><tr><td><b>Motorist Injuries: </b></td><td>" + "&nbsp; " + "  ${MVOInjuries}</td></tr></table>";
+                                       
+                                         }
+                                         else if (ped) {
+                                         locTxt = "<table><tr><td><b>Pedestrian Fatalities: </b></td><td>" + "&nbsp; " + "  ${PedFatalities}</td></tr></table>";
+                                        locTxt += "<table><tr><td><b>Pedestrian Injuries: </b></td><td>" + "&nbsp; " + "  ${PedInjuries}</td></tr></table>";
+                                       
+                                         }
+                                        else if (bike) {
+                                         locTxt = "<table><tr><td><b>Cyclist Fatalities: </b></td><td>" + "&nbsp; " + "  ${BikeFatalities}</td></tr></table>";
+                                        locTxt += "<table><tr><td><b>Cyclist Injuries: </b></td><td>" + "&nbsp; " + "  ${BikeInjuries}</td></tr></table>";
+                                       
+                                         }
+                                        /* else if (monthly){
                                          locTxt = "<table><tr><td><b>Total Fatalities: </b></td><td>" + "&nbsp; " + "  ${Fatalities}</td></tr></table>";
                                          locTxt += "<table><tr><td><b>Total Injuries: </b></td><td>" + "&nbsp; " + "  ${Injuries}</td></tr></table>";
-                                         locTxt += "<table><tr><td><b>Non-Injury Crashes: </b>" + "&nbsp; " + " </td><td> ${NonInjuryCrashes}</td></tr></table>";
-                                         }
-                                         else if (monthly){
-                                         locTxt = "<table><tr><td><b>Total Fatalities: </b></td><td>" + "&nbsp; " + "  ${Fatalities}</td></tr></table>";
-                                         locTxt += "<table><tr><td><b>Total Injuries: </b></td><td>" + "&nbsp; " + "  ${Injuries}</td></tr></table>";
-                                         locTxt += "<table><tr><td><b>Non-Injury Crashes: </b></td><td>" + "&nbsp; " + "  ${NonInjuryCrashes}</td></tr></table>";
+                                  
                                                 
-                                         }
+                                         }*/
 
                                   }
+                                
 
                                   var template = new esri.InfoTemplate();
                                   template.setTitle(locDate);
@@ -225,12 +281,20 @@ function executeIdentifyTask(evt) {
                                   var locDate = slider2Lookup(locSliderVal);
 
                            var locTxt;
-                           if (yearly) {
+                           if (all) {
                                   locTxt = "<table><tr><td><b>Total Fatalites: </b>" + "&nbsp; " + "</td><td> ${Fatalities}</td></tr></table>";
-                                  locTxt += "<table><tr><td><b>Non-Injury Crashes: </b>" + "&nbsp; " + "</td><td> ${NonInjuryCrashes}</td></tr></table>";
-                           } else if (monthly) {
-                                  locTxt = "<table><tr><td><b>Total Fatalites: </b>" + "&nbsp; " + "</td><td> ${Fatalities}</td></tr></table>";
-                                  locTxt += "<table><tr><td><b>Non-Injury Crashes: </b>" + "&nbsp; " + "</td><td> ${NonInjuryCrashes}</td></tr></table>";
+                                //  locTxt += "<table><tr><td><b>Non-Injury Crashes: </b>" + "&nbsp; " + "</td><td> ${NonInjuryCrashes}</td></tr></table>";
+                           } else if (motor) {
+                                  locTxt = "<table><tr><td><b>Motorist Fatalites: </b>" + "&nbsp; " + "</td><td> ${MVOFatalities}</td></tr></table>";
+                                //  locTxt += "<table><tr><td><b>Non-Injury Crashes: </b>" + "&nbsp; " + "</td><td> ${NonInjuryCrashes}</td></tr></table>";
+                           }
+                           else if (bike) {
+                                  locTxt = "<table><tr><td><b>Cyclist Fatalites: </b>" + "&nbsp; " + "</td><td> ${BikeFatalities}</td></tr></table>";
+                                //  locTxt += "<table><tr><td><b>Non-Injury Crashes: </b>" + "&nbsp; " + "</td><td> ${NonInjuryCrashes}</td></tr></table>";
+                           }
+                           else if (ped) {
+                                  locTxt = "<table><tr><td><b>Pedestrian Fatalites: </b>" + "&nbsp; " + "</td><td> ${PedFatalities}</td></tr></table>";
+                                //  locTxt += "<table><tr><td><b>Non-Injury Crashes: </b>" + "&nbsp; " + "</td><td> ${NonInjuryCrashes}</td></tr></table>";
                            }
 
                            var template = new esri.InfoTemplate();
@@ -298,7 +362,7 @@ function executeIdentifyTask(evt) {
                                   template.setTitle("Safety Engineering Projects");
                                   break;
 
-                                  case  "sb_2014Dissolve_0725":                                 
+                                  case  "sb_2014":                                 
                                   locTxt = "<table><tr><td><b>On Street:" + "&nbsp;" + " </b>${FIRST_Main}</td></tr>";
                                   locTxt += "<tr><td>From" + "&nbsp;" + " ${FIRST_From}";
                                   locTxt += " To" + "&nbsp;" + "${FIRST_ToSt}</td></tr>";
@@ -387,7 +451,7 @@ function executeIdentifyTask(evt) {
 
                                   case  "tlc":                             
                                   locTxt = "<table><tr><td><b>Event:" + "&nbsp;" + "</b>${Event}</td></tr>";
-                                  locTxt += "<tr><td><b>Address:" + "&nbsp;" + "</b>${Address}}</td></tr>";
+                                  locTxt += "<tr><td><b>Address:" + "&nbsp;" + "</b>${Address}</td></tr>";
                                   locTxt += "<tr><td><b>Date:" + "&nbsp;" + "</b>${Date}</td></tr></table>";
 								  template.setTitle("TLC");
                                   break;        
@@ -398,6 +462,12 @@ function executeIdentifyTask(evt) {
 								  template.setTitle("Street Teams");
                                   break; 
 
+                                  case  "Hands_On_Safety_Demos":                             
+                                  locTxt = "<table><tr><td><b>Date:" + "&nbsp;" + "</b>${Event_Date}</td></tr>";
+                                  locTxt += "<table><tr><td><b>Site:" + "&nbsp;" + "</b>${Site_Serve}</td></tr>";
+                                  locTxt += "<tr><td><b>Activity:" + "&nbsp;" + "</b>${Activity}</td></tr></table>";
+								  template.setTitle("Hands-On Safety Demos");
+                                  break; 
                                                                      
                                    default:
                                   locTxt = "No data available";
@@ -504,10 +574,10 @@ function executeIdentifyTask(evt) {
                            locTxt += "<tr style='border-bottom: 1px solid black;'><td><b><h4>INTERVENTION DATA</h4></b>" + "</td><td></td></tr>";                                                       
                            locTxt += "<tr><td><b>LPIs Installed:</b>" + "&nbsp;" + " </td><td>${SUM_LPI}</td></tr>";
                            locTxt += "<tr><td><b>Num. of Safety Projects (Intersections):</b>" + "&nbsp;" + " </td><td>${SUM_SIPIntersections}</td></tr>";
-                           locTxt += "<tr><td><b>Miles of Safety Projects  (Corridors):</b>" + "&nbsp;" + " </td><td>${SUM_SIPCorridors_Miles}</td></tr>";
+                           locTxt += "<tr><td><b>Miles of Safety Projects  (Corridors):</b>" + "&nbsp;" + " </td><td>${SUM_SIPCorridors}" + "&nbsp;" + "miles</td></tr>";
                            locTxt += "<tr><td><b>Speed Humps Installed:</b>" + "&nbsp; " + " </td><td>${SUM_SpeedHumps}</td></tr>";
-                           locTxt += "<tr><td><b>Miles of Arterial Slow Zones:</b>" + "&nbsp;" + " </td><td> ${SUM_ASZ_Miles}</td></tr>";
-                           locTxt += "<tr><td><b>Miles of Neighborhood Slow Zones:</b>" + "&nbsp;" + " </td><td> ${SUM_NeighSlowZones_Miles}</td></tr></table>";
+                           locTxt += "<tr><td><b>Miles of Arterial Slow Zones:</b>" + "&nbsp;" + " </td><td> ${SUM_ASZ}" + "&nbsp;" + "miles</td></tr>";
+                           locTxt += "<tr><td><b>Miles of Neighborhood Slow Zones:</b>" + "&nbsp;" + " </td><td> ${SUM_NeighSlowZones}" + "&nbsp;" + "miles</td></tr></table>";
 
 
                                                               

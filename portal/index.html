@@ -288,7 +288,7 @@
 							<div class="modal-dialog">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h4 class="modal-title" id="myModalLabel"><span class="map-icon glyphicon glyphicon-info-sign"></span>Information</h4>
+										<h4 class="modal-title" id="myModalLabel"><span class="map-icon glyphicon glyphicon-info-sign"></span>Information</h4><span class="lastUpdateDate"></span>
 									</div>
 									<div class="modal-body">
 
@@ -431,9 +431,9 @@
 																<div class="form-group">
 																	<div class="col-sm-12 bottomMargin">
 																		<div class="btn-group btn-group-2  btn-toggle center-block">
-																			<label class="btn btn-sm active btn-primary crashTypeSwitchBtns" id="injuriesBtn" style="width: 50%; font-size: 16px;"> Injury </label>
+																			<label class="btn btn-sm  btn-default crashTypeSwitchBtns" id="injuriesBtn" style="width: 50%; font-size: 16px; color: #777"> Injury </label>
 
-																			<label class="btn btn-sm btn-default crashTypeSwitchBtns" id="fatalitiesBtn" style="width: 50%; font-size: 16px; color: #777;"> Fatality </label>
+																			<label class="btn btn-sm active btn-primary crashTypeSwitchBtns" id="fatalitiesBtn" style="width: 50%; font-size: 16px;"> Fatality </label>
 																		</div>
 
 																	</div>
@@ -442,16 +442,16 @@
 																<div class="form-group">
 																	<div class="col-sm-12 bottomMargin">
 																		<div class="btn-group btn-group-2 btn-toggle center-block crashTypeBtnBlock">
-																			<label class="btn btn-sm active btn-primary crashTimeSwitchBtns" id="monthlyBtn" style="width: 50%; font-size: 16px;"> Monthly </label>
+																			<label class="btn btn-sm btn-default  crashTimeSwitchBtns" id="monthlyBtn" style="width: 50%; font-size: 16px; color: #777"> Monthly </label>
 
-																			<label class="btn btn-sm btn-default crashTimeSwitchBtns" id="yearlyBtn" style="width: 50%; font-size: 16px; color: #777"> Yearly </label>
+																			<label class="btn btn-sm btn-primary active crashTimeSwitchBtns" id="yearlyBtn" style="width: 50%; font-size: 16px; "> Yearly </label>
 																		</div>
 																	</div>
 																</div>
 
 															</div>
 
-															<div class="container-fluid bottomMargin" style="width: auto; background-color: #FFF; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
+															<div class="container-fluid bottomMargin" style="width: auto; background-color: #FFF; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; padding-bottom: .7em; border: 1px solid #DDDDDD; border-radius: 12px;">
 																<h5 class="subTitleTop" style="margin-bottom: 1.7em;">Legend</h5>
 																<h4 style="margin-left:1.2em; margin-right:10px;"><span id="layerLabel" class="crashLabel1 hidden-xs"></span></h4>
 
@@ -470,8 +470,12 @@
 																	<img src="img/legend/Injury_heat.svg" class="img-responsive text-center" alt="Responsive image" style="width: 100%; margin-top: 1em;">
 																	<h6><span style="margin-left: 0.2em;" class="pull-left">Low</span><span class="pull-right">High</span></h6>
 																</div>
-
+																
+															
 															</div>
+															<span class="lastUpdateDate" style="margin-left: 1.2em; font-size: .9em"></span>
+															
+															
 
 															<div class="form-group">
 
@@ -480,11 +484,10 @@
 																		<div class="modal-dialog">
 																			<div class="modal-content">
 																				<div class="modal-header">
-																					<h4 class="modal-title" id="myModalLabel">Traffic Crashes </h4>
+																					<h3 class="modal-title" id="myModalLabel">Traffic Crashes Information</h3><span class="lastUpdateDate"></span>
 																				</div>
 																				<div class="modal-body">
-																					Crash data is obtained from the Traffic Accident Management System (TAMS), which is maintained by the New York City Police Department (NYPD). Only crashes with valid geographic information are mapped.  All midblock crashes are mapped to the nearest intersection. Injuries and fatalities are grouped by intersection and summarized by month and year. This data is queried and aggregated on a monthly basis and is current as of the query date. Current year data is January to the end of the latest full month. All mappable crash data is represented on the simplified NYC street model. Crashes occurring at complex intersections with multiple roadways are mapped onto a single point. Injury and fatality crashes occurring on highways are excluded from this data. 
-																				<br><br>
+																					Fatality crash data is obtained from the New York City Department of Transportation (DOT) fatality database, which is populated by New York City Police Department (NYPD) data and maintained by DOT. Injury crash data is obtained from the Traffic Accident Management System (TAMS), which is maintained by the NYPD. Only crashes with valid geographic information are mapped. All crashes are mapped to the nearest intersection. Injuries and fatalities are grouped by intersection and summarized by month and year. This data is queried and aggregated on a monthly basis and is current as of the query date. Current year data is January to the end of the latest full month. All mappable crash data is represented on the simplified NYC street model. Crashes occurring at complex intersections with multiple roadways are mapped onto a single point. Injury and fatality crashes occurring on highways are excluded from the map. <br><br>
 																				<b>Please note that the data and information on this website is for informational purposes only. While we seek to provide accurate information, please note that errors may be present and information presented may not be complete.  Accordingly, the City of New York or the New York City Department of Transportation make no representation as to the accuracy of the information or its suitability for any purpose and disclaim any liability for omissions or errors that may be contained therein.</b>
 																				</div>
 																				<div class="modal-footer">
@@ -510,9 +513,9 @@
 
 															<h3 class="mainTitle visible-xs">Filters <span style="font-size: 16px; vertical-align: middle;"><a data-toggle="modal" data-target="#SafetyModal"><span class="glyphicon glyphicon-info-sign"></span></a></span></h3>
 
-															<div class="container-fluid bottomMargin" style="width: auto; background-color: #F8F8F8; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
+															<div class="container-fluid bottomMargin" style="width: auto; background-color: #F8F8F8; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; padding-bottom: .7em; border: 1px solid #DDDDDD; border-radius: 12px;">
 																<h5 class="subTitleTop" style="margin-left:1em;">Filters</h5>
-																<div class="btn-group-vertical" data-toggle="buttons" style="display:block; margin-left:10px; margin-right:10px; margin-bottom:1.5em;">
+																<div class="btn-group-vertical" data-toggle="buttons" style="display:block; margin-left:10px; margin-right:10px; margin-bottom:1.0em;">
 																	<button id="LPIBtn" class="btn btn-default interventionBtns">
 																		<i class=" icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #6B3E98; white-space: normal; opacity: .6;">%</i>
 																		<input type="checkbox" class="list_item" id="LeadingPedestrianSignals" value='2'>
@@ -549,14 +552,18 @@
 																		<span style="opacity: .6">Neighborhood Slow Zones</span>
 																	</button>
 
+																
 																</div>
+																
+																
 															</div>
+															<span class="lastUpdateDate" style="margin-left: 1.0em; font-size: .9em"></span>
 
 															<div class="modal fade" id="SafetyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 																<div class="modal-dialog">
 																	<div class="modal-content">
 																		<div class="modal-header">
-																			<h4 class="modal-title" id="myModalLabel">Safety Safety Design Descriptions</h4>
+																			<h3 class="modal-title" id="myModalLabel">Safety Safety Design Information</h3><span class="lastUpdateDate"></span>
 																		</div>
 																		<div class="modal-body">
 
@@ -620,17 +627,17 @@
 
 																<h3 class="mainTitle visible-xs">Filters <span style="font-size: 16px; vertical-align: middle;"><a data-toggle="modal" data-target="#OutreachModal"><span class="glyphicon glyphicon-info-sign"></span></a></span></h3>
 															</div>
-															<div class="container-fluid bottomMargin" style="width: auto; background-color: #F8F8F8; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
+															<div class="container-fluid bottomMargin" style="width: auto; background-color: #F8F8F8; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; padding-bottom:.7em; border: 1px solid #DDDDDD; border-radius: 12px;">
 
 																<div class="container-fluid">
 																	<h5 class="subTitleTop" style="margin-left:1em;">Filters</h5>
 																</div>
 
-																<div class="btn-group-vertical" data-toggle="buttons" style="display:block; margin-left:10px; margin-right:10px; margin-bottom:1.5em;">
+																<div class="btn-group-vertical" data-toggle="buttons" style="display:block; margin-left:10px; margin-right:10px; margin-bottom:1.0em; ">
 
 																	<button id="SchoolBtn" class="btn btn-default outreachBtns active" style="background-color: #e4e4e4;">
 																		<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #4daf4a;">%</i>
-																		<input type="checkbox" class="list_item1" id="Schools" value="3">
+																		<input type="checkbox" class="list_item1" id="Schools" value="3" style="opacity: .6">
 																		<span>Schools</span>
 																	</button>
 
@@ -662,16 +669,23 @@
 																			<input type="checkbox" class="list_item1" id="Workshops" value="3" style="opacity: .6">
 																			<span>Street Teams</span>
 																		</button>
-
+																		
+																	<button id="HandsOnSafetyDemosBtn" class="btn btn-default outreachBtns active">
+																			<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #00E6A9; opacity: .6;">%</i>
+																			<input type="checkbox" class="list_item1" id="Workshops" value="3" style="opacity: .6">
+																			<span>Hands-On Safety Demos</span>
+																	</button>
 																</div>
+																
 
 															</div>
+															<span class="lastUpdateDate" style="margin-left: 1.0em; font-size: .9em"></span>
 
 															<div class="modal fade" id="OutreachModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 																<div class="modal-dialog">
 																	<div class="modal-content">
 																		<div class="modal-header">
-																			<h4 class="modal-title" id="myModalLabel">Outreach Description</h4>
+																			<h3 class="modal-title" id="myModalLabel">Outreach Information</h3><span class="lastUpdateDate"></span>
 																		</div>
 																		<div class="modal-body">
 																			<i>Schools</i>
@@ -706,9 +720,14 @@
 																			<br>
 																			Street Team members trained the general public with Vision Zero hands-on safety exercises including safe walking and biking, car safety tips and an opportunity to get inside of large delivery trucks to experience their blind spots.  Vision Zero promotional materials were handed out along with educational handouts.
 																			<br><br>
+																		
+																			<i>Hands-On Safety Demos</i>
+																			<br>
+																			Hands-on safety demonstrations are held in conjunction with local partners throughout New York City, bringing traffic safety education and assistance directly to the public. Events include car safety seat fittings, bicycle helmet fittings and giveaways, truck safety and car safety demonstrations, Vision Zero table seminars and DWI awareness events.
+																			<br><br>
 																			<b>Please note that the data and information on this website is for informational purposes only. While we seek to provide accurate information, please note that errors may be present and information presented may not be complete.  Accordingly, the City of New York or the New York City Department of Transportation make no representation as to the accuracy of the information or its suitability for any purpose and disclaim any liability for omissions or errors that may be contained therein.</b>
 																			<br>
-																		</div>
+																		 </div>
 
 																		<div class="modal-footer">
 																			<button type="button" class="btn btn-default" data-dismiss="modal">
@@ -763,7 +782,7 @@
 																</div>
 															</div>
 
-															<div class="container-fluid bottomMargin hidden-xs" style="width: auto; background-color: #FFF; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; border: 1px solid #DDDDDD; border-radius: 12px;">
+															<div class="container-fluid bottomMargin hidden-xs" id="sumLegendDiv" style="width: auto; background-color: #FFF; margin-right: auto; margin-left: auto; padding-left: 0px; padding-right: 0px; padding-bottom:.7em; border: 1px solid #DDDDDD; border-radius: 12px; display:none;">
 																<h5 class="subTitleTop">Legend</h5>
 																<div id="fatalitySumLegend" class="col-sm-12" style="margin-bottom: 1em; color: #565656; font-weight: 800;">
 																	<h4>Density of Fatalities by
@@ -777,7 +796,7 @@
 																	<h4>Density of Injuries by
 																	<br>
 																	<span id="injurySumLegendType">Police Precinct</span></h4>
-																	<img src="img/legend/Injury_Sum.svg" class="img-responsive text-center" alt="Responsive image" style="width: 100%; margin-top: 1em;">
+																	<img src="img/legend/Injury_Sum.svg" class="img-responsive text-center" alt="Responsive image" style="width: 100%; margin-top: 1em; ">
 																	<h6><span style="margin-left: 0.2em;" class="pull-left">Low</span><span class="pull-right">High</span></h6>
 																</div>
 
@@ -786,13 +805,16 @@
 																	<br>
 																	Data covers 2014 to present.
 																</p>
+																
 															</div>
+															<span class="lastUpdateDate" style="margin-left: 1.4em; font-size: .9em"></span>
+															
 
 															<div class="modal fade" id="SummaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 																<div class="modal-dialog">
 																	<div class="modal-content">
 																		<div class="modal-header">
-																			<h4 class="modal-title" id="myModalLabel">Administrative District Summary Information</h4>
+																			<h3 class="modal-title" id="myModalLabel">Administrative District Summary Information</h3><span class="lastUpdateDate"></span>
 																		</div>
 																		<div class="modal-body">
 																			<i>Police Precinct</i>
@@ -914,14 +936,14 @@
 							$(window).resize(function() {
 								if ($('#yearSelect').is(':visible')) {
 									$("#jqxslider").jqxSlider({
-										value : 67
+										value : 68
 									});
 									$("#jqxslider2").jqxSlider({
 										value : 5
 									});
 								}
 								if (($("#jqxslider").is(':visible')) || ($("#jqxslider2").is(':visible'))) {
-									$("#monthSelect").val("7");
+									$("#monthSelect").val("8");
 									$("#yearSelect").val("5");
 								}
 								checkStats();
@@ -1008,16 +1030,16 @@
 									$('body').css('visibility', 'visible');
 									//     $('map').css('visibility', 'visible');
 									//addCrashLocations();
-									$("#monthSelect").val("7");
+									$("#monthSelect").val("8");
 									$("#yearSelect").val("5");
 
 									$("#jqxslider").jqxSlider({
-										value : 67
+										value : 68
 									});
 									$("#jqxslider2").jqxSlider({
 										value : 5
 									});
-									curInjuryValue = $('#jqxslider').jqxSlider('getValue');
+									curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
 
 									addCrashLayers();
 									IdentifyTaskInit();
@@ -1036,8 +1058,9 @@
 
 							dojo.connect(map, "onLoad", function() {
 								hideLoading();
+								$(".jqx-slider-tickscontainer").css("visibility", "hidden"); 
 								$("#jqxslider").jqxSlider({
-									value : 67
+									value : 68
 								});
 								$("#jqxslider2").jqxSlider({
 									value : 5
@@ -1046,7 +1069,7 @@
 								var yearVal = $("#yearSelect").val();
 								selectMonthVal = parseInt(monthVal);
 								selectYearVal = parseInt(yearVal);
-								var toolTipVal = sliderLookup(curInjuryValue);
+								var toolTipVal = slider2Lookup(curInjuryValue);
 
 								$("#dateLabel").text(toolTipVal);
 								;
@@ -1055,6 +1078,7 @@
 
 								showSlider();
 								checkStats();
+								$(".jqx-slider-tickscontainer").css("visibility", "visible"); 
 								
 							});
 
