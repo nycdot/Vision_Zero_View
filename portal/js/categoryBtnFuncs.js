@@ -3,6 +3,13 @@
 
 var activeCategory;
 
+$('#InjuryModal, #SafetyModal, #OutreachModal, #SummaryModal, #info-modal').on('show.bs.modal', function (e) {
+	
+	 map.infoWindow.hide();
+});
+
+	
+
 function showLoading() {
 	$('button').addClass('disabled'); 
     $('button').prop('disabled', true);

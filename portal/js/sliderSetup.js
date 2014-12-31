@@ -6,7 +6,7 @@
                     theme: 'bootstrap',
                     value: 0,
                     min: 0,
-                    max: 68,  // ticks until Aug 2014, will need updating
+                    max: 70,  // ticks until Aug 2014, will need updating
                     mode: "fixed",
                     step: 1,
                     ticksFrequency: 1,

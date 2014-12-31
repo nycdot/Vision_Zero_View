@@ -19,7 +19,9 @@
 		
 		 
 	//// update date - text added to info page header ////
-	var updateDate = "Data as of " + "10/29/2014";
+	// var updateDate = "Data as of " + "10/29/2014";
+	//// update date - text added to info page header ////
+	var updateDate = "<a href='https://data.cityofnewyork.us/Public-Safety/Vision-Zero-View-Data/y74e-vkxy' target='blank'><b>Data</b></a> as of " + "10/24/2014";
 	
 	$(".lastUpdateDate").html(updateDate);
 	

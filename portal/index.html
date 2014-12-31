@@ -473,10 +473,9 @@
 																
 															
 															</div>
-															<span class="lastUpdateDate" style="margin-left: 1.2em; font-size: .9em"></span>
+															<span class="lastUpdateDate" style="margin-left: 1.2em; font-size: .9em"></span><br>
 															
 															
-
 															<div class="form-group">
 
 																<div class="col-sm-12">
@@ -557,7 +556,8 @@
 																
 																
 															</div>
-															<span class="lastUpdateDate" style="margin-left: 1.0em; font-size: .9em"></span>
+															<span class="lastUpdateDate" style="margin-left: 1.0em; font-size: .9em"></span><br>
+															
 
 															<div class="modal fade" id="SafetyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 																<div class="modal-dialog">
@@ -588,7 +588,7 @@
 																			<br>
 																			<i>Speed Humps</i>
 																			<br>
-																			Speed Humps are a raised area of a roadway designed to reduce vehicle speeds.
+																			Speed Humps are a raised area of a roadway designed to reduce vehicle speeds. Only speed humps created since 2013 are displayed. 
 
 																			<br>
 																			<br>
@@ -679,7 +679,8 @@
 																
 
 															</div>
-															<span class="lastUpdateDate" style="margin-left: 1.0em; font-size: .9em"></span>
+															<span class="lastUpdateDate" style="margin-left: 1.0em; font-size: .9em"></span><br>
+															
 
 															<div class="modal fade" id="OutreachModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 																<div class="modal-dialog">
@@ -807,7 +808,8 @@
 																</p>
 																
 															</div>
-															<span class="lastUpdateDate" style="margin-left: 1.4em; font-size: .9em"></span>
+															<span class="lastUpdateDate" style="margin-left: 1.4em; font-size: .9em"></span><br>
+															
 															
 
 															<div class="modal fade" id="SummaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -936,14 +938,14 @@
 							$(window).resize(function() {
 								if ($('#yearSelect').is(':visible')) {
 									$("#jqxslider").jqxSlider({
-										value : 68
+										value : 70
 									});
 									$("#jqxslider2").jqxSlider({
 										value : 5
 									});
 								}
 								if (($("#jqxslider").is(':visible')) || ($("#jqxslider2").is(':visible'))) {
-									$("#monthSelect").val("8");
+									$("#monthSelect").val("10");
 									$("#yearSelect").val("5");
 								}
 								checkStats();
@@ -1034,7 +1036,7 @@
 									$("#yearSelect").val("5");
 
 									$("#jqxslider").jqxSlider({
-										value : 68
+										value : 70
 									});
 									$("#jqxslider2").jqxSlider({
 										value : 5
@@ -1058,9 +1060,9 @@
 
 							dojo.connect(map, "onLoad", function() {
 								hideLoading();
-								$(".jqx-slider-tickscontainer").css("visibility", "hidden"); 
+							//	$(".jqx-slider-tickscontainer").css("visibility", "hidden"); 
 								$("#jqxslider").jqxSlider({
-									value : 68
+									value : 70
 								});
 								$("#jqxslider2").jqxSlider({
 									value : 5
@@ -1078,7 +1080,9 @@
 
 								showSlider();
 								checkStats();
-								$(".jqx-slider-tickscontainer").css("visibility", "visible"); 
+								var crashDateMonth = $("#monthSelect");
+								crashDateMonth.hide();
+							//	$(".jqx-slider-tickscontainer").css("visibility", "visible"); 
 								
 							});
 
