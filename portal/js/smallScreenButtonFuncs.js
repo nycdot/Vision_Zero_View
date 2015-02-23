@@ -23,7 +23,7 @@ $("#smallScreenInfo").on(evt, function() {
 		var interventionInfo = "<i>Leading Pedestrian Interval Signals</i><br>Intersections where DOT adjusts signal timing to show a walk sign for pedestrians before showing a green light to vehicle traffic. The goal of these signals is to improve street safety by giving pedestrians a chance to establish their presence in the crosswalk before vehicles make turns across that crosswalk.";
 		interventionInfo += "<br><br><i>Major Safety Projects</i><br>Safety-oriented engineering projects that use multiple treatments (signals, markings, concrete etc) on both corridors and intersections. Improvements are generally aimed at calming and better organizing traffic, creating shorter, safer pedestrian crossings, expanding pedestrian space, improving travel times and creating safe routes for bicycle travel. The map displays DOT operational (non-capital) projects from 2013 and 2014.";
 		interventionInfo += "<br><br><i>Arterial Slow Zones</i><br>The Arterial Slow Zone program uses a combination of a lower speed limit, signal timing changes, distinctive signs and increased enforcement to improve safety on some of New York City's most high-crash corridors.  <br> <br>";
-        interventionInfo += "<i>Speed Humps</i><br>Speed Humps are a raised area of a roadway designed to reduce vehicle speeds. Only speed humps created since 2013 are displayed. <br><br>";
+        interventionInfo += "<i>Speed Humps</i><br>Speed Humps are a raised area of a roadway designed to reduce vehicle speeds. Only speed humps created since 2013 are displayed.<br><br>";
         interventionInfo += "<i>Safe Streets for Seniors</i><br>The Safe Streets for Seniors program is an initiative aimed at increasing safety for older New Yorkers. Based on factors such as senior population density, injury crashes, and senior trip generators, DOT has selected and studied 25 Senior Pedestrian Focus Areas. Within these areas, DOT expands pedestrian crossing time to allow for slower senior walking speeds, evaluates potential safety improvements and also conducts education outreach to senior centers.";
         interventionInfo += "<br><br><i>Neighborhood Slow Zones</i><br>The Neighborhood Slow Zone program is an application based program which takes a neighborhood area and reduces the speed limit to 20 mph. Areas are chosen based on crashes, presence of schools and other neighborhood amenities and community support. The treatments include a mixture of markings, signage, and speed humps.";
 		interventionInfo +=	"<br><br><b>Please note that the data and information on this website is for informational purposes only. While we seek to provide accurate information, please note that errors may be present and information presented may not be complete. Accordingly, the City of New York or the New York City Department of Transportation make no representation as to the accuracy of the information or its suitability for any purpose and disclaim any liability for omissions or errors that may be contained therein.</b>";
@@ -153,7 +153,6 @@ else if(outreach){
 var selectMonthVal, selectYearVal;
 
 $("#monthSelect, #yearSelect").on('change', function() {
-
               
        var monthVal = $("#monthSelect").val();
        var yearVal = $("#yearSelect").val();

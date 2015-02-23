@@ -6,7 +6,7 @@
                     theme: 'bootstrap',
                     value: 0,
                     min: 0,
-                    max: 70,  // ticks until Aug 2014, will need updating
+                    max: 72,  // ticks until Aug 2014, will need updating
                     mode: "fixed",
                     step: 1,
                     ticksFrequency: 1,
@@ -30,7 +30,7 @@
                     theme: 'bootstrap',
                     value: 0,
                     min: 0,
-                    max: 5,  // ticks until May 2014, will need updating
+                    max: 6,  // ticks until May 2014, will need updating
                     mode: "fixed",
                     step: 1,
                     ticksFrequency: 1,
@@ -174,7 +174,9 @@ function sliderLookup(value) {
 		case 5:
 			locYear = "2014";
 			break;
-
+		case 6:
+			locYear = "2015";
+			break;
 		default:
 			locYear = "2009";
 			break;
@@ -207,9 +209,11 @@ function slider2Lookup(value) {
 			locYear = "2013";
 			break;
 		case 5:
-			locYear = "2014 YTD";
+			locYear = "2014";
 			break;
-
+		case 6:
+			locYear = updateDate2;
+			break;
 		default:
 			locYear = "2009";
 			break;

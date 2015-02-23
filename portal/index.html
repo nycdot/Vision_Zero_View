@@ -321,6 +321,11 @@
 										<tr>
 											<td class="labelRow"><strong>Citywide Totals</strong></td>
 										</tr>
+										<tr>
+											
+										<td class="labelRow"><strong><span id="updateMobileDate"></span></strong></td>
+										
+										</tr>
 
 										<tr>
 											<td class="labelRow"><span id="stat1Mobile" class="stats"></span></td>
@@ -356,6 +361,7 @@
 											<option value="3">2012</option>
 											<option value="4">2013</option>
 											<option value="5">2014</option>
+											<option value="6">2015</option>
 										</select>
 
 									</div>
@@ -366,8 +372,8 @@
 								</div>
 								<div id="sliderDiv" class="hidden-xs" >
 									<div id="date2Label" class="crashLabel2"></div>
-									<div id='jqxslider' class="hidden-xs"></div>
-									<div id='jqxslider2' class="hidden-xs" style="display: none"></div>
+									<div id='jqxslider' class="hidden-xs" ></div>
+									<div id='jqxslider2' class="hidden-xs" style="display:none"></div>
 								</div>
 							</div>
 						</div>
@@ -471,11 +477,11 @@
 																	<h6><span style="margin-left: 0.2em;" class="pull-left">Low</span><span class="pull-right">High</span></h6>
 																</div>
 																
-															
+
 															</div>
-															<span class="lastUpdateDate" style="margin-left: 1.2em; font-size: .9em"></span><br>
+															<span class="lastUpdateDate" style="margin-left: 1.2em; font-size: .9em"></span>
 															
-															
+
 															<div class="form-group">
 
 																<div class="col-sm-12">
@@ -551,12 +557,9 @@
 																		<span style="opacity: .6">Neighborhood Slow Zones</span>
 																	</button>
 
-																
 																</div>
-																
-																
-															</div>
-															<span class="lastUpdateDate" style="margin-left: 1.0em; font-size: .9em"></span><br>
+																</div>
+																<span class="lastUpdateDate" style="margin-left: 1.0em; font-size: .9em"></span>
 															
 
 															<div class="modal fade" id="SafetyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -588,7 +591,7 @@
 																			<br>
 																			<i>Speed Humps</i>
 																			<br>
-																			Speed Humps are a raised area of a roadway designed to reduce vehicle speeds. Only speed humps created since 2013 are displayed. 
+																			Speed Humps are a raised area of a roadway designed to reduce vehicle speeds. Only speed humps created since 2013 are displayed.
 
 																			<br>
 																			<br>
@@ -677,10 +680,9 @@
 																	</button>
 																</div>
 																
-
 															</div>
-															<span class="lastUpdateDate" style="margin-left: 1.0em; font-size: .9em"></span><br>
-															
+															<span class="lastUpdateDate" style="margin-left: 1.0em; font-size: .9em"></span>
+
 
 															<div class="modal fade" id="OutreachModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 																<div class="modal-dialog">
@@ -808,9 +810,7 @@
 																</p>
 																
 															</div>
-															<span class="lastUpdateDate" style="margin-left: 1.4em; font-size: .9em"></span><br>
-															
-															
+															<span class="lastUpdateDate" style="margin-left: 1.4em; font-size: .9em"></span>
 
 															<div class="modal fade" id="SummaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 																<div class="modal-dialog">
@@ -938,22 +938,30 @@
 							$(window).resize(function() {
 								if ($('#yearSelect').is(':visible')) {
 									$("#jqxslider").jqxSlider({
-										value : 70
+										value : 72
 									});
+					
+								//$("#date3Label").text(toolTipVal);
 									$("#jqxslider2").jqxSlider({
-										value : 5
+										value : 6
 									});
+								//var toolTipVal;
+								//if (monthly) toolTipVal = sliderLookup(72);
+								//else toolTipVal = slider2Lookup(6);
+								
+								//$("#date3Label").text(toolTipVal);
+								
 								}
 								if (($("#jqxslider").is(':visible')) || ($("#jqxslider2").is(':visible'))) {
-									$("#monthSelect").val("10");
-									$("#yearSelect").val("5");
+									$("#monthSelect").val("0");
+									$("#yearSelect").val("6");
 								}
 								checkStats();
 
 							});
 
 							showLoading();
-							hideSlider();
+							//hideSlider();
 							spatialRef = new esri.SpatialReference({
 								"wkid" : 102718
 							});
@@ -1032,14 +1040,14 @@
 									$('body').css('visibility', 'visible');
 									//     $('map').css('visibility', 'visible');
 									//addCrashLocations();
-									$("#monthSelect").val("8");
-									$("#yearSelect").val("5");
+									$("#monthSelect").val("0");
+									$("#yearSelect").val("6");
 
 									$("#jqxslider").jqxSlider({
-										value : 70
+										value : 72
 									});
 									$("#jqxslider2").jqxSlider({
-										value : 5
+										value : 6
 									});
 									curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
 
@@ -1060,12 +1068,12 @@
 
 							dojo.connect(map, "onLoad", function() {
 								hideLoading();
-							//	$(".jqx-slider-tickscontainer").css("visibility", "hidden"); 
+								//$(".jqx-slider-tickscontainer").css("visibility", "hidden"); 
 								$("#jqxslider").jqxSlider({
-									value : 70
+									value : 72
 								});
 								$("#jqxslider2").jqxSlider({
-									value : 5
+									value : 6
 								});
 								var monthVal = $("#monthSelect").val();
 								var yearVal = $("#yearSelect").val();
@@ -1082,7 +1090,7 @@
 								checkStats();
 								var crashDateMonth = $("#monthSelect");
 								crashDateMonth.hide();
-							//	$(".jqx-slider-tickscontainer").css("visibility", "visible"); 
+								//$(".jqx-slider-tickscontainer").css("visibility", "visible"); 
 								
 							});
 
