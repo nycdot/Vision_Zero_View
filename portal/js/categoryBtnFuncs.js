@@ -71,10 +71,12 @@ $(document).ready(function () {
     police = true, community = false, council = false;
     injurySum = true, fatalitySum = false;
     all = true; ped = false, bike = false, motor = false;
+     
 });
 
 
 $(".categoriesNav").on(evt, function () {
+
     var id = this.id;
     activeCategory = id;
 
@@ -126,7 +128,7 @@ function CategoryNav(id) {
 
 
 
-        _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/SAFETY_INTERVENTION/MapServer";
+        _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/SAFETY_INTERVENTIONS/MapServer";
         _layerID = "interventionLayer";
         interventionLayer = AddDynamicLayer(_layerURL, _layerID, true);
 

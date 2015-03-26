@@ -338,7 +338,7 @@
 
 									<div class="crash-dates visible-xs">
 										<span class="crash-dates-label">Date:</span>
-										<select id="monthSelect" class="crash-date-month">
+										<select id="monthSelect" class="crash-date-month" style="display:none">
 											<option value="" disabled="" selected="selected">Month</option>
 											<option value="0">Jan</option>
 											<option value="1">Feb</option>
@@ -372,8 +372,8 @@
 								</div>
 								<div id="sliderDiv" class="hidden-xs" >
 									<div id="date2Label" class="crashLabel2"></div>
-									<div id='jqxslider' class="hidden-xs" ></div>
-									<div id='jqxslider2' class="hidden-xs" style="display:none"></div>
+									<div id='jqxslider' class="hidden-xs"  style="display:none" ></div>
+									<div id='jqxslider2' class="hidden-xs" ></div>
 								</div>
 							</div>
 						</div>
@@ -938,7 +938,7 @@
 							$(window).resize(function() {
 								if ($('#yearSelect').is(':visible')) {
 									$("#jqxslider").jqxSlider({
-										value : 72
+										value : 73
 									});
 					
 								//$("#date3Label").text(toolTipVal);
@@ -953,7 +953,7 @@
 								
 								}
 								if (($("#jqxslider").is(':visible')) || ($("#jqxslider2").is(':visible'))) {
-									$("#monthSelect").val("0");
+									$("#monthSelect").val("1");
 									$("#yearSelect").val("6");
 								}
 								checkStats();
@@ -968,10 +968,19 @@
 							//XMin: 867257.15 & nbsp; YMin: 95739.32 & nbsp; XMax: 1166823.12 & nbsp; YMax: 282857.38
 
 							var initialExtent = new esri.geometry.Extent({
-								"xmin" : 842170.34,
-								"ymin" : 128499.74,
-								"xmax" : 1141736.31,
-								"ymax" : 315617.79,
+								"xmin" : 968627.0820206474,
+								
+								"ymin" : 191375.29559070797,
+								"xmax" : 1019460.4153539806,
+								
+								"ymax" : 232986.4067018191,
+								
+								//"xmin" : 842170.34, // original
+								
+								//"ymin" : 128499.74,
+								//"xmax" : 1141736.31,
+								
+								//"ymax" : 315617.79,
 								"spatialReference" : {
 									"wkid" : 102718
 								}
@@ -1027,10 +1036,16 @@
 									var tiled = new Tiled(basemapURL);
 									map.addLayer(tiled);
 
+
 								}
+								       	//console.log("xmin: " + map.extent.xmin);
+       									//console.log("xmax: " + map.extent.xmax);
+              							//console.log("ymin: " + map.extent.ymin);
+       									//console.log("ymax: " + map.extent.ymax);
 
 								resizeMap();
 								mapWinEvent();
+
 							});
 
 							$(document).ready(function() {
@@ -1040,11 +1055,12 @@
 									$('body').css('visibility', 'visible');
 									//     $('map').css('visibility', 'visible');
 									//addCrashLocations();
-									$("#monthSelect").val("0");
+									$("#monthSelect").val("1");
 									$("#yearSelect").val("6");
+									$("#monthSelect").css("display", "none");
 
 									$("#jqxslider").jqxSlider({
-										value : 72
+										value : 73
 									});
 									$("#jqxslider2").jqxSlider({
 										value : 6
@@ -1056,6 +1072,7 @@
 									sliderSetup();
 									checkCrashCatState();
 									toggleCrashLayers();
+
 									
 									$(function() {
     									FastClick.attach(document.body);
@@ -1070,7 +1087,7 @@
 								hideLoading();
 								//$(".jqx-slider-tickscontainer").css("visibility", "hidden"); 
 								$("#jqxslider").jqxSlider({
-									value : 72
+									value : 73
 								});
 								$("#jqxslider2").jqxSlider({
 									value : 6
@@ -1090,6 +1107,7 @@
 								checkStats();
 								var crashDateMonth = $("#monthSelect");
 								crashDateMonth.hide();
+					
 								//$(".jqx-slider-tickscontainer").css("visibility", "visible"); 
 								
 							});

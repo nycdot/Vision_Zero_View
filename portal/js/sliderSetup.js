@@ -6,7 +6,7 @@
                     theme: 'bootstrap',
                     value: 0,
                     min: 0,
-                    max: 72,  // ticks until Aug 2014, will need updating
+                    max: 73,  // ticks until Aug 2014, will need updating
                     mode: "fixed",
                     step: 1,
                     ticksFrequency: 1,
@@ -96,7 +96,7 @@ function sliderSetup () {
 		tooltip.css('top', thumbY - tooltip.outerHeight(true) - 25);
 		var toolTipVal = sliderLookup(value);
 		$("#dateLabel").text(toolTipVal);
-		$("#date2Label").text(toolTipVal);
+		//$("#date2Label").text(toolTipVal);
 		tooltip.text(toolTipVal);
 	}
 	

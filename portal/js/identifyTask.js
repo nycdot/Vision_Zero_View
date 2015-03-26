@@ -31,7 +31,7 @@ function IdentifyTaskInit() {
               injury_yearly_motor_IdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/motorInjury_yearly/MapServer");
 
 
-              interventionIdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/SAFETY_INTERVENTION/MapServer");
+              interventionIdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/SAFETY_INTERVENTIONS/MapServer");
               outreachIdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/OUTREACH/MapServer");
               summaryInjIdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/SUMMARY_2014_INJURIES/MapServer");
               summaryFatalIdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/SUMMARY_2014_FATALITIES/MapServer");
@@ -44,6 +44,14 @@ function IdentifyTaskInit() {
 
 function executeIdentifyTask(evt) {
        var locSliderVal;
+
+        var clickpt = evt.mapPoint;
+        console.log("x: " + clickpt.x);
+        console.log("y: " + clickpt.y);
+       console.log("xmin: " + map.extent.xmin);
+       console.log("xmax: " + map.extent.xmax);
+       console.log("ymin: " + map.extent.ymin);
+       console.log("ymax: " + map.extent.ymax);
 
        var wait = map.centerAt(evt.mapPoint);
        wait.addCallback(function (){

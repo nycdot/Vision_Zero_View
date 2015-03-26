@@ -29,6 +29,7 @@ function resizeMap() {
 		map.reposition();
 		map.resize();
 	}
+	
 }
 
 function orientationChanged(e) {
