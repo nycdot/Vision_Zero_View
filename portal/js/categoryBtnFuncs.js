@@ -1,5 +1,5 @@
 
-//// initial state after document.load ////////////
+//// initial state after docuemtn.load ////////////
 
 var activeCategory;
 
@@ -7,8 +7,6 @@ $('#InjuryModal, #SafetyModal, #OutreachModal, #SummaryModal, #info-modal').on('
 	
 	 map.infoWindow.hide();
 });
-
-	
 
 function showLoading() {
 	$('button').addClass('disabled'); 
@@ -71,12 +69,10 @@ $(document).ready(function () {
     police = true, community = false, council = false;
     injurySum = true, fatalitySum = false;
     all = true; ped = false, bike = false, motor = false;
-     
 });
 
 
 $(".categoriesNav").on(evt, function () {
-
     var id = this.id;
     activeCategory = id;
 

@@ -6,7 +6,7 @@
                     theme: 'bootstrap',
                     value: 0,
                     min: 0,
-                    max: 73,  // ticks until Aug 2014, will need updating
+                    max: sliderMonth,  // change var in map.config to update
                     mode: "fixed",
                     step: 1,
                     ticksFrequency: 1,
@@ -30,7 +30,7 @@
                     theme: 'bootstrap',
                     value: 0,
                     min: 0,
-                    max: 6,  // ticks until May 2014, will need updating
+                    max: 6,  // ticks until 2015
                     mode: "fixed",
                     step: 1,
                     ticksFrequency: 1,
@@ -97,6 +97,7 @@ function sliderSetup () {
 		var toolTipVal = sliderLookup(value);
 		$("#dateLabel").text(toolTipVal);
 		//$("#date2Label").text(toolTipVal);
+		
 		tooltip.text(toolTipVal);
 	}
 	
@@ -212,6 +213,7 @@ function slider2Lookup(value) {
 			locYear = "2014";
 			break;
 		case 6:
+			//locYear = "As of Jan. 31st 2015";
 			locYear = updateDate2;
 			break;
 		default:

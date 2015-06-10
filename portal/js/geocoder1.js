@@ -102,8 +102,7 @@ function LocationSearch1() {
        $("#btnsearch1").on(evt, function() {
         
               var adminBoundary = $("#searchBorough1").text().trim();
-              
-              if (adminBoundary == "Borough") { 
+			  if (adminBoundary == "Borough") { 
               	alert("Please select a borough.");
               	return;
               }
@@ -125,7 +124,6 @@ function LocationSearch1() {
 
 
 			function GeoParser(searchValue, adminBoundary) {
-				console.log("boro: " + adminBoundary);
 
 				if (adminBoundary == "Boro") {
 					alert("Please select Administrative Boundary on Right");

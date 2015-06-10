@@ -31,15 +31,13 @@ function zoomTo(lat, lon) {
 function LocationSearch() {
 
     $("#btnsearch").on(evt, function () {
-    	//console.log(adminBoundary);
 
         var adminBoundary = $("#searchBorough").text().trim();
-         if (adminBoundary == "Borough") { 
+		if (adminBoundary == "Borough") { 
          	alert("Please select a borough.");
          	return;
          	}
         var search = $("#address").val();
-        if (adminBoundary =="") console.log("Please select a borough.");
 
         GeoParser(search, adminBoundary)
     });
@@ -53,7 +51,6 @@ function LocationSearch() {
 }
 
 function GeoParser(searchValue, adminBoundary) {
-		//console.log("boro: " + adminBoundary);
     //alert(adminBoundary);
 
     if (adminBoundary == "Borough") {

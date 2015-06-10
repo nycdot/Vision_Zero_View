@@ -1,3 +1,6 @@
+//JSON month and year need to be manually updated every month
+// see instructions on G drive for how to create new JSONs
+
 var stats = 
 
 
@@ -5,10 +8,10 @@ var stats =
 [{"SUM_Fatalities":15,"SUM_Injuries":3963,"SUM_PedFat":14,"SUM_PedInj":993,"SUM_BikeFat":0,"SUM_BikeInj":91,"SUM_MVOFat":1,"SUM_MVOInj":2879,"Year":2009,"Month":1},
 {"SUM_Fatalities":20,"SUM_Injuries":3623,"SUM_PedFat":15,"SUM_PedInj":935,"SUM_BikeFat":0,"SUM_BikeInj":130,"SUM_MVOFat":5,"SUM_MVOInj":2558,"Year":2009,"Month":2},
 {"SUM_Fatalities":8,"SUM_Injuries":4187,"SUM_PedFat":6,"SUM_PedInj":992,"SUM_BikeFat":1,"SUM_BikeInj":188,"SUM_MVOFat":1,"SUM_MVOInj":3007,"Year":2009,"Month":3},
-{"SUM_Fatalities":29,"SUM_Injuries":4659,"SUM_PedFat":12,"SUM_PedInj":1001,"SUM_BikeFat":1,"SUM_BikeInj":237,"SUM_MVOFat":16,"SUM_MVOInj":3421,"Year":2009,"Month":4},
+{"SUM_Fatalities":30,"SUM_Injuries":4659,"SUM_PedFat":13,"SUM_PedInj":1001,"SUM_BikeFat":1,"SUM_BikeInj":237,"SUM_MVOFat":16,"SUM_MVOInj":3421,"Year":2009,"Month":4},
 {"SUM_Fatalities":32,"SUM_Injuries":5183,"SUM_PedFat":19,"SUM_PedInj":1013,"SUM_BikeFat":3,"SUM_BikeInj":298,"SUM_MVOFat":10,"SUM_MVOInj":3872,"Year":2009,"Month":5},
 {"SUM_Fatalities":20,"SUM_Injuries":5138,"SUM_PedFat":10,"SUM_PedInj":943,"SUM_BikeFat":2,"SUM_BikeInj":368,"SUM_MVOFat":8,"SUM_MVOInj":3827,"Year":2009,"Month":6},
-{"SUM_Fatalities":17,"SUM_Injuries":5302,"SUM_PedFat":10,"SUM_PedInj":899,"SUM_BikeFat":0,"SUM_BikeInj":476,"SUM_MVOFat":7,"SUM_MVOInj":3927,"Year":2009,"Month":7},
+{"SUM_Fatalities":18,"SUM_Injuries":5302,"SUM_PedFat":11,"SUM_PedInj":899,"SUM_BikeFat":0,"SUM_BikeInj":476,"SUM_MVOFat":7,"SUM_MVOInj":3927,"Year":2009,"Month":7},
 {"SUM_Fatalities":29,"SUM_Injuries":4946,"SUM_PedFat":14,"SUM_PedInj":899,"SUM_BikeFat":3,"SUM_BikeInj":475,"SUM_MVOFat":12,"SUM_MVOInj":3572,"Year":2009,"Month":8},
 {"SUM_Fatalities":20,"SUM_Injuries":4800,"SUM_PedFat":14,"SUM_PedInj":942,"SUM_BikeFat":1,"SUM_BikeInj":337,"SUM_MVOFat":5,"SUM_MVOInj":3521,"Year":2009,"Month":9},
 {"SUM_Fatalities":26,"SUM_Injuries":5127,"SUM_PedFat":13,"SUM_PedInj":1154,"SUM_BikeFat":0,"SUM_BikeInj":311,"SUM_MVOFat":13,"SUM_MVOInj":3662,"Year":2009,"Month":10},
@@ -51,31 +54,35 @@ var stats =
 {"SUM_Fatalities":11,"SUM_Injuries":3994,"SUM_PedFat":7,"SUM_PedInj":1037,"SUM_BikeFat":0,"SUM_BikeInj":276,"SUM_MVOFat":4,"SUM_MVOInj":2681,"Year":2012,"Month":11},
 {"SUM_Fatalities":27,"SUM_Injuries":4587,"SUM_PedFat":19,"SUM_PedInj":1294,"SUM_BikeFat":0,"SUM_BikeInj":212,"SUM_MVOFat":8,"SUM_MVOInj":3081,"Year":2012,"Month":12},
 {"SUM_Fatalities":28,"SUM_Injuries":4043,"SUM_PedFat":20,"SUM_PedInj":1113,"SUM_BikeFat":1,"SUM_BikeInj":192,"SUM_MVOFat":7,"SUM_MVOInj":2738,"Year":2013,"Month":1},
-{"SUM_Fatalities":18,"SUM_Injuries":3562,"SUM_PedFat":13,"SUM_PedInj":984,"SUM_BikeFat":0,"SUM_BikeInj":131,"SUM_MVOFat":5,"SUM_MVOInj":2447,"Year":2013,"Month":2},
+{"SUM_Fatalities":19,"SUM_Injuries":3562,"SUM_PedFat":14,"SUM_PedInj":984,"SUM_BikeFat":0,"SUM_BikeInj":131,"SUM_MVOFat":5,"SUM_MVOInj":2447,"Year":2013,"Month":2},
 {"SUM_Fatalities":23,"SUM_Injuries":4186,"SUM_PedFat":14,"SUM_PedInj":987,"SUM_BikeFat":1,"SUM_BikeInj":195,"SUM_MVOFat":8,"SUM_MVOInj":3004,"Year":2013,"Month":3},
 {"SUM_Fatalities":16,"SUM_Injuries":4437,"SUM_PedFat":13,"SUM_PedInj":901,"SUM_BikeFat":0,"SUM_BikeInj":290,"SUM_MVOFat":3,"SUM_MVOInj":3246,"Year":2013,"Month":4},
-{"SUM_Fatalities":13,"SUM_Injuries":5025,"SUM_PedFat":5,"SUM_PedInj":982,"SUM_BikeFat":2,"SUM_BikeInj":400,"SUM_MVOFat":6,"SUM_MVOInj":3643,"Year":2013,"Month":5},
+{"SUM_Fatalities":14,"SUM_Injuries":5025,"SUM_PedFat":6,"SUM_PedInj":982,"SUM_BikeFat":2,"SUM_BikeInj":400,"SUM_MVOFat":6,"SUM_MVOInj":3643,"Year":2013,"Month":5},
 {"SUM_Fatalities":24,"SUM_Injuries":5110,"SUM_PedFat":12,"SUM_PedInj":972,"SUM_BikeFat":3,"SUM_BikeInj":508,"SUM_MVOFat":9,"SUM_MVOInj":3630,"Year":2013,"Month":6},
 {"SUM_Fatalities":25,"SUM_Injuries":5082,"SUM_PedFat":14,"SUM_PedInj":854,"SUM_BikeFat":0,"SUM_BikeInj":470,"SUM_MVOFat":11,"SUM_MVOInj":3758,"Year":2013,"Month":7},
 {"SUM_Fatalities":31,"SUM_Injuries":4845,"SUM_PedFat":12,"SUM_PedInj":853,"SUM_BikeFat":1,"SUM_BikeInj":524,"SUM_MVOFat":18,"SUM_MVOInj":3468,"Year":2013,"Month":8},
-{"SUM_Fatalities":27,"SUM_Injuries":4992,"SUM_PedFat":15,"SUM_PedInj":999,"SUM_BikeFat":0,"SUM_BikeInj":479,"SUM_MVOFat":12,"SUM_MVOInj":3514,"Year":2013,"Month":9},
+{"SUM_Fatalities":28,"SUM_Injuries":4992,"SUM_PedFat":15,"SUM_PedInj":999,"SUM_BikeFat":0,"SUM_BikeInj":479,"SUM_MVOFat":13,"SUM_MVOInj":3514,"Year":2013,"Month":9},
 {"SUM_Fatalities":24,"SUM_Injuries":4842,"SUM_PedFat":16,"SUM_PedInj":1066,"SUM_BikeFat":2,"SUM_BikeInj":429,"SUM_MVOFat":6,"SUM_MVOInj":3347,"Year":2013,"Month":10},
 {"SUM_Fatalities":36,"SUM_Injuries":4704,"SUM_PedFat":26,"SUM_PedInj":1106,"SUM_BikeFat":2,"SUM_BikeInj":281,"SUM_MVOFat":8,"SUM_MVOInj":3317,"Year":2013,"Month":11},
 {"SUM_Fatalities":28,"SUM_Injuries":4285,"SUM_PedFat":20,"SUM_PedInj":1167,"SUM_BikeFat":0,"SUM_BikeInj":175,"SUM_MVOFat":8,"SUM_MVOInj":2943,"Year":2013,"Month":12},
-{"SUM_Fatalities":22,"SUM_Injuries":3920,"SUM_PedFat":13,"SUM_PedInj":1080,"SUM_BikeFat":1,"SUM_BikeInj":120,"SUM_MVOFat":8,"SUM_MVOInj":2720,"Year":2014,"Month":1},
+{"SUM_Fatalities":23,"SUM_Injuries":3920,"SUM_PedFat":13,"SUM_PedInj":1080,"SUM_BikeFat":1,"SUM_BikeInj":120,"SUM_MVOFat":9,"SUM_MVOInj":2720,"Year":2014,"Month":1},
 {"SUM_Fatalities":11,"SUM_Injuries":3106,"SUM_PedFat":7,"SUM_PedInj":821,"SUM_BikeFat":1,"SUM_BikeInj":94,"SUM_MVOFat":3,"SUM_MVOInj":2191,"Year":2014,"Month":2},
-{"SUM_Fatalities":17,"SUM_Injuries":3840,"SUM_PedFat":12,"SUM_PedInj":955,"SUM_BikeFat":0,"SUM_BikeInj":190,"SUM_MVOFat":5,"SUM_MVOInj":2695,"Year":2014,"Month":3},
-{"SUM_Fatalities":21,"SUM_Injuries":4025,"SUM_PedFat":8,"SUM_PedInj":855,"SUM_BikeFat":2,"SUM_BikeInj":305,"SUM_MVOFat":11,"SUM_MVOInj":2865,"Year":2014,"Month":4},
-{"SUM_Fatalities":23,"SUM_Injuries":4634,"SUM_PedFat":9,"SUM_PedInj":883,"SUM_BikeFat":2,"SUM_BikeInj":385,"SUM_MVOFat":12,"SUM_MVOInj":3366,"Year":2014,"Month":5},
+{"SUM_Fatalities":17,"SUM_Injuries":3841,"SUM_PedFat":12,"SUM_PedInj":956,"SUM_BikeFat":0,"SUM_BikeInj":190,"SUM_MVOFat":5,"SUM_MVOInj":2695,"Year":2014,"Month":3},
+{"SUM_Fatalities":21,"SUM_Injuries":4028,"SUM_PedFat":8,"SUM_PedInj":856,"SUM_BikeFat":2,"SUM_BikeInj":306,"SUM_MVOFat":11,"SUM_MVOInj":2866,"Year":2014,"Month":4},
+{"SUM_Fatalities":23,"SUM_Injuries":4636,"SUM_PedFat":9,"SUM_PedInj":883,"SUM_BikeFat":2,"SUM_BikeInj":385,"SUM_MVOFat":12,"SUM_MVOInj":3368,"Year":2014,"Month":5},
 {"SUM_Fatalities":18,"SUM_Injuries":4962,"SUM_PedFat":6,"SUM_PedInj":941,"SUM_BikeFat":3,"SUM_BikeInj":472,"SUM_MVOFat":9,"SUM_MVOInj":3549,"Year":2014,"Month":6},
 {"SUM_Fatalities":29,"SUM_Injuries":4586,"SUM_PedFat":15,"SUM_PedInj":769,"SUM_BikeFat":3,"SUM_BikeInj":533,"SUM_MVOFat":11,"SUM_MVOInj":3284,"Year":2014,"Month":7},
 {"SUM_Fatalities":22,"SUM_Injuries":4450,"SUM_PedFat":10,"SUM_PedInj":722,"SUM_BikeFat":4,"SUM_BikeInj":499,"SUM_MVOFat":8,"SUM_MVOInj":3229,"Year":2014,"Month":8},
-{"SUM_Fatalities":32,"SUM_Injuries":4438,"SUM_PedFat":17,"SUM_PedInj":749,"SUM_BikeFat":1,"SUM_BikeInj":485,"SUM_MVOFat":14,"SUM_MVOInj":3204,"Year":2014,"Month":9},
+{"SUM_Fatalities":32,"SUM_Injuries":4440,"SUM_PedFat":17,"SUM_PedInj":750,"SUM_BikeFat":1,"SUM_BikeInj":485,"SUM_MVOFat":14,"SUM_MVOInj":3205,"Year":2014,"Month":9},
 {"SUM_Fatalities":21,"SUM_Injuries":4700,"SUM_PedFat":16,"SUM_PedInj":973,"SUM_BikeFat":1,"SUM_BikeInj":430,"SUM_MVOFat":4,"SUM_MVOInj":3297,"Year":2014,"Month":10},
-{"SUM_Fatalities":23,"SUM_Injuries":4226,"SUM_PedFat":12,"SUM_PedInj":1017,"SUM_BikeFat":2,"SUM_BikeInj":279,"SUM_MVOFat":9,"SUM_MVOInj":2930,"Year":2014,"Month":11},
-{"SUM_Fatalities":16,"SUM_Injuries":4133,"SUM_PedFat":13,"SUM_PedInj":1213,"SUM_BikeFat":0,"SUM_BikeInj":189,"SUM_MVOFat":3,"SUM_MVOInj":2731,"Year":2014,"Month":12},
-{"SUM_Fatalities":13,"SUM_Injuries":3562,"SUM_PedFat":6,"SUM_PedInj":924,"SUM_BikeFat":1,"SUM_BikeInj":119,"SUM_MVOFat":6,"SUM_MVOInj":2519,"Year":2015,"Month":1},
-{"SUM_Fatalities":13,"SUM_Injuries":3088,"SUM_PedFat":10,"SUM_PedInj":759,"SUM_BikeFat":0,"SUM_BikeInj":82,"SUM_MVOFat":3,"SUM_MVOInj":2247,"Year":2015,"Month":2}]
+{"SUM_Fatalities":23,"SUM_Injuries":4227,"SUM_PedFat":12,"SUM_PedInj":1017,"SUM_BikeFat":2,"SUM_BikeInj":279,"SUM_MVOFat":9,"SUM_MVOInj":2931,"Year":2014,"Month":11},
+{"SUM_Fatalities":16,"SUM_Injuries":4136,"SUM_PedFat":13,"SUM_PedInj":1214,"SUM_BikeFat":0,"SUM_BikeInj":189,"SUM_MVOFat":3,"SUM_MVOInj":2733,"Year":2014,"Month":12},
+{"SUM_Fatalities":16,"SUM_Injuries":3562,"SUM_PedFat":9,"SUM_PedInj":921,"SUM_BikeFat":1,"SUM_BikeInj":119,"SUM_MVOFat":6,"SUM_MVOInj":2522,"Year":2015,"Month":1},
+{"SUM_Fatalities":14,"SUM_Injuries":3109,"SUM_PedFat":11,"SUM_PedInj":769,"SUM_BikeFat":0,"SUM_BikeInj":83,"SUM_MVOFat":3,"SUM_MVOInj":2257,"Year":2015,"Month":2},
+{"SUM_Fatalities":11,"SUM_Injuries":3817,"SUM_PedFat":6,"SUM_PedInj":825,"SUM_BikeFat":0,"SUM_BikeInj":166,"SUM_MVOFat":5,"SUM_MVOInj":2826,"Year":2015,"Month":3},
+{"SUM_Fatalities":18,"SUM_Injuries":4016,"SUM_PedFat":4,"SUM_PedInj":718,"SUM_BikeFat":2,"SUM_BikeInj":317,"SUM_MVOFat":12,"SUM_MVOInj":2981,"Year":2015,"Month":4},
+{"SUM_Fatalities":28,"SUM_Injuries":4932,"SUM_PedFat":17,"SUM_PedInj":824,"SUM_BikeFat":1,"SUM_BikeInj":484,"SUM_MVOFat":10,"SUM_MVOInj":3624,"Year":2015,"Month":5}]
+
 ;
 
 
@@ -83,17 +90,13 @@ var stats =
 var stats2 = 
 
 
-
-[{"SUM_Fatalities":258,"SUM_Injuries":55961,"SUM_PedFat":156,"SUM_PedInj":11928,"SUM_BikeFat":12,"SUM_BikeInj":3287,"SUM_MVOFat":90,"SUM_MVOInj":40746,"Year":2009},
+[{"SUM_Fatalities":260,"SUM_Injuries":55961,"SUM_PedFat":158,"SUM_PedInj":11928,"SUM_BikeFat":12,"SUM_BikeInj":3287,"SUM_MVOFat":90,"SUM_MVOInj":40746,"Year":2009},
 {"SUM_Fatalities":271,"SUM_Injuries":58459,"SUM_PedFat":152,"SUM_PedInj":12046,"SUM_BikeFat":19,"SUM_BikeInj":3990,"SUM_MVOFat":100,"SUM_MVOInj":42423,"Year":2010},
 {"SUM_Fatalities":249,"SUM_Injuries":55537,"SUM_PedFat":142,"SUM_PedInj":12021,"SUM_BikeFat":22,"SUM_BikeInj":3785,"SUM_MVOFat":85,"SUM_MVOInj":39731,"Year":2011},
 {"SUM_Fatalities":278,"SUM_Injuries":54592,"SUM_PedFat":151,"SUM_PedInj":11644,"SUM_BikeFat":18,"SUM_BikeInj":3902,"SUM_MVOFat":109,"SUM_MVOInj":39046,"Year":2012},
-{"SUM_Fatalities":293,"SUM_Injuries":55113,"SUM_PedFat":180,"SUM_PedInj":11984,"SUM_BikeFat":12,"SUM_BikeInj":4074,"SUM_MVOFat":101,"SUM_MVOInj":39055,"Year":2013},
-{"SUM_Fatalities":255,"SUM_Injuries":51020,"SUM_PedFat":138,"SUM_PedInj":10978,"SUM_BikeFat":20,"SUM_BikeInj":3981,"SUM_MVOFat":97,"SUM_MVOInj":36061,"Year":2014},
-{"SUM_Fatalities":26,"SUM_Injuries":6650,"SUM_PedFat":16,"SUM_PedInj":1683,"SUM_BikeFat":1,"SUM_BikeInj":201,"SUM_MVOFat":9,"SUM_MVOInj":4766,"Year":2015}]
-
-
-
+{"SUM_Fatalities":296,"SUM_Injuries":55113,"SUM_PedFat":182,"SUM_PedInj":11984,"SUM_BikeFat":12,"SUM_BikeInj":4074,"SUM_MVOFat":102,"SUM_MVOInj":39055,"Year":2013},
+{"SUM_Fatalities":256,"SUM_Injuries":51032,"SUM_PedFat":138,"SUM_PedInj":10982,"SUM_BikeFat":20,"SUM_BikeInj":3982,"SUM_MVOFat":98,"SUM_MVOInj":36068,"Year":2014},
+{"SUM_Fatalities":87,"SUM_Injuries":19436,"SUM_PedFat":47,"SUM_PedInj":4057,"SUM_BikeFat":4,"SUM_BikeInj":1169,"SUM_MVOFat":36,"SUM_MVOInj":14210,"Year":2015}]
 ;
 
 
@@ -115,9 +118,9 @@ function checkStats(){
        if ($('#yearSelect').is(':visible')) {
       
               curInjuryValue = smallScreenCrashLayer();
-              	$("#updateMobileDate").css("display", "block");		
+				$("#updateMobileDate").css("display", "block");			  
               
-              if (curInjuryValue >= 74){
+              if (curInjuryValue > sliderMonth){
                      $("#stat1Mobile").text("Data not yet available");
                      $("#stat2Mobile").text("");
                      
@@ -139,7 +142,7 @@ function checkStats(){
                      setStats(curInjuryValue);
                     
                }
-                $("#updateMobileDate").css("display", "none");
+			   $("#updateMobileDate").css("display", "none");
      }
 	 	 // hack added for Chrome on Android - to update dropdown menu text
 	 var yearText = $("#yearSelect option:selected").text();

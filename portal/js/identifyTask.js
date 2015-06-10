@@ -45,14 +45,6 @@ function IdentifyTaskInit() {
 function executeIdentifyTask(evt) {
        var locSliderVal;
 
-        var clickpt = evt.mapPoint;
-        console.log("x: " + clickpt.x);
-        console.log("y: " + clickpt.y);
-       console.log("xmin: " + map.extent.xmin);
-       console.log("xmax: " + map.extent.xmax);
-       console.log("ymin: " + map.extent.ymin);
-       console.log("ymax: " + map.extent.ymax);
-
        var wait = map.centerAt(evt.mapPoint);
        wait.addCallback(function (){
 
@@ -121,7 +113,7 @@ function executeIdentifyTask(evt) {
                              //     console.log("how many : " + feature.length);
                                    
                                   var locName = result.layerName;
-                                  //console.log("layername : " + locName);
+                                  console.log("layername : " + locName);
                                   var split, locParse;
                                   if (monthly){
                                          split = locName.split("_"); 
@@ -374,8 +366,8 @@ function executeIdentifyTask(evt) {
                                   locTxt = "<table><tr><td><b>On Street:" + "&nbsp;" + " </b>${FIRST_Main}</td></tr>";
                                   locTxt += "<tr><td>From" + "&nbsp;" + " ${FIRST_From}";
                                   locTxt += " To" + "&nbsp;" + "${FIRST_ToSt}</td></tr>";
-                                 locTxt += "<tr><td><b>Date Installed:</b> " + "&nbsp;" + "${ Date_installed}</td></tr>";
-                                  locTxt += "<tr><td><b>Num. of Humps:</b> " + "&nbsp;" + "${Num_speedhumps}</td></tr></table>";
+                                 locTxt += "<tr><td><b>Date Installed:</b> " + "&nbsp;" + "${FIRST_Inst}</td></tr>";
+                                  locTxt += "<tr><td><b>Num. of Humps:</b> " + "&nbsp;" + "${FIRST_NumO}</td></tr></table>";
                                   template.setTitle("Speed Humps");
                                   break;     
 
