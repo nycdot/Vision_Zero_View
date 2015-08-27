@@ -31,7 +31,7 @@ function IdentifyTaskInit() {
               injury_yearly_motor_IdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/motorInjury_yearly/MapServer");
 
 
-              interventionIdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/SAFETY_INTERVENTION/MapServer");
+              interventionIdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/SAFETY_INTERVENTIONS/MapServer");
               outreachIdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/OUTREACH/MapServer");
               summaryInjIdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/SUMMARY_2014_INJURIES/MapServer");
               summaryFatalIdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/SUMMARY_2014_FATALITIES/MapServer");
@@ -458,7 +458,7 @@ function executeIdentifyTask(evt) {
 
                                   case  "Street_teams_flyers":                             
                                   locTxt = "<table><tr><td><b>Date:" + "&nbsp;" + "</b>${Date}</td></tr>";
-                                  locTxt += "<tr><td><b>Total flyers:" + "&nbsp;" + "</b>${Total_Flye}</td></tr></table>";
+                                  locTxt += "<tr><td><b>Total flyers:" + "&nbsp;" + "</b>${TotalFlyer}</td></tr></table>";
 								  template.setTitle("Street Teams");
                                   break; 
 
@@ -543,7 +543,7 @@ function executeIdentifyTask(evt) {
                            locTxt += "<tr><td><b>Bicycle Injuries:</b>" + "&nbsp;" + " </td><td> ${SUM_BikeInjuries}</td></tr>";
                            locTxt += "<tr><td><b>Motorist Fatalites:</b>" + " &nbsp;" + " </td><td>${SUM_MVOFatalities}</td></tr>";
                            locTxt += "<tr><td><b>Motorist Injuries:</b>" + "&nbsp;" + " </td><td>${SUM_MVOInjuries}</td></tr>";
-                        //   locTxt += "<tr><td><b>Non-Injury Crashes:</b>" + "&nbsp;" + " </td><td>${SUM_NonInjuryCrashes}</td></tr><tr></tr>";
+                           locTxt += "<tr><td><b>Non-Injury Crashes:</b>" + "&nbsp;" + " </td><td>${SUM_NonInjuryCrashes}</td></tr><tr></tr>";
                            
                            if ((locName == "Summary_2014_PP_ALL_FATALITIES") || (locName == "Summary_2014_PP_ALL_INJURIES") ) { 
 	                           locTxt += "<tr style='border-bottom: 1px solid black;'><td><b><h4>DEMOGRAPHIC DATA</h4></b>" + "</td><td></td></tr>";                                                       

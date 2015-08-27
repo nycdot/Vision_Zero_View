@@ -1,7 +1,7 @@
 ///////////////////// SAFETY INTERVENTIONS //////////////////////////////////////////////////////////////
 
-
-$(".interventionBtns").on("touchstart  click", function() {
+//$(".interventionBtns").on("touchstart  click", function() {
+$(".interventionBtns").bind("click", function() {
 map.infoWindow.hide();
 	interventionLayerIDs = [];
 	var test = this;
@@ -81,7 +81,8 @@ function checkInterventionBtns(interventionLayerIDs) {
 /////////////////////////  OUTREACH /////////////////////////////////////////////////////////////////////////////////
 
 
-$(".outreachBtns").on("touchstart  click", function() {
+//$(".outreachBtns").on("touchstart  click", function() {
+$(".outreachBtns").bind("click", function() {
 	map.infoWindow.hide();
 	outreachLayerIDs = [];
 

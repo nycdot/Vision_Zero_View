@@ -8,8 +8,6 @@ $('#InjuryModal, #SafetyModal, #OutreachModal, #SummaryModal, #info-modal').on('
 	 map.infoWindow.hide();
 });
 
-	
-
 function showLoading() {
 	$('button').addClass('disabled'); 
     $('button').prop('disabled', true);
@@ -126,7 +124,7 @@ function CategoryNav(id) {
 
 
 
-        _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/SAFETY_INTERVENTION/MapServer";
+        _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/SAFETY_INTERVENTIONS/MapServer";
         _layerID = "interventionLayer";
         interventionLayer = AddDynamicLayer(_layerURL, _layerID, true);
 
