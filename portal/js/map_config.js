@@ -6,19 +6,19 @@
 	
 	
         
-       // var arcgisserver = "dotqagisiis03:6080"; // http://dotqavgisweb:6080/  // for testing only
+        var arcgisserver = "dotqagisiis03:6080"; // http://dotqavgisweb:6080/  // for testing only
        
 		
 		 var domainName= window.location.host;
 		 var mapServiceDomain= window.location.host+":6080";
-		 var arcgisserver = mapServiceDomain;
+		 //var arcgisserver = mapServiceDomain;
 
 		 
 	// change date in variables to last day of most recent update month
 		  
-	var updateDate = "<a href='http://www.nyc.gov/html/dot/html/about/vz_datafeeds.shtml' target='blank'><b>Data</b></a> as of " + "5/31/2015";
-	var updateDate2 = "As of " + "5/31/2015"; // for dropdown menu in mobile view - index.html
-	var updateDate3 = "5/31/2015";
+	var updateDate = "<a href='http://www.nyc.gov/html/dot/html/about/vz_datafeeds.shtml' target='blank'><b>Data</b></a> as of " + "7/31/2015";
+	var updateDate2 = "As of " + "7/31/2015"; // for dropdown menu in mobile view - index.html
+	var updateDate3 = "7/31/2015";
 	
 	
 	$(".lastUpdateDate").html(updateDate);
@@ -31,5 +31,5 @@
 	// slidermonth == cur year (2009=0, 2015=6) * 12 + cur month  (Jan == 0, Dec == 11) so, 75 => April 2015 (6*12 = 72 + 3 = 75)
 	// dropdownmonth == 0-11, Jan=0, Dec=11
 	
-	sliderMonth = 76; // May
+	sliderMonth = 78; // May
 	dropdownMonth = 4;
