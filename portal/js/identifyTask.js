@@ -357,8 +357,8 @@ function executeIdentifyTask(evt) {
                                   break;
                                   
                                   case  "SAFETY_ENGG_SIP_Corridors": case "SAFETY_ENGG_SIP_Intersections":                     
-                                  locTxt = "<table><tr><td><b>Project Name:" + "&nbsp;" + "</b>${Pjct_Name}</td></tr>";
-                                  locTxt += "<tr><td><b>Project Type:</b>" + "&nbsp;" + "${SIPProjTyp}</td></tr></table>";
+                                  locTxt = "<table><tr><td><b>Project Name:" + "&nbsp;" + "</b>${Proj_Name}</td></tr>";
+                                  locTxt += "<tr><td><b>Project Type:</b>" + "&nbsp;" + "${SIP_Proj_T}</td></tr></table>";
                                   template.setTitle("Safety Engineering Projects");
                                   break;
 
