@@ -1,5 +1,5 @@
 
-//// initial state after document.load ////////////
+//// initial state after docuemtn.load ////////////
 
 var activeCategory;
 

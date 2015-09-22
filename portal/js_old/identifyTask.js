@@ -132,36 +132,48 @@ function executeIdentifyTask(evt) {
                                   
                                   if ((locParse == "injuries")||(locParse == "I")) {
                                   	if (all){
-                                      
+                                        // if (yearly) 
                                          {
                                          locTxt = "<table><tr><td><b>Total Injuries: </b>" + "&nbsp;" + " </td><td>${Injuries}</td></tr></table>";
                                    
                                          }
-     
+                                      /*   else if (monthly){
+                                         locTxt = "<table><tr><td><b>Total Injuries: </b>" + "&nbsp; " + "</td><td>  ${Injuries}</td></tr></table>";
+                                     
+                                         }*/
                                    	} else if (ped){
                                          
-                                      
+                                       // if (yearly) 
                                         {
                                          locTxt = "<table><tr><td><b>Pedestrian Injuries: </b>" + "&nbsp;" + " </td><td>${PedInjuries}</td></tr></table>";
                                    
                                          }
+                                        /* else if (monthly){
+                                         locTxt = "<table><tr><td><b>Total Injuries: </b>" + "&nbsp; " + "</td><td>  ${Injuries}</td></tr></table>";
                                      
+                                         }*/
                                    	} else if (motor){
                                          
-                                        
+                                        // if (yearly) 
                                          {
                                          locTxt = "<table><tr><td><b>Motorist Injuries: </b>" + "&nbsp;" + " </td><td>${MVOInjuries}</td></tr></table>";
                                    
                                          }
-                                   
+                                       /*  else if (monthly){
+                                         locTxt = "<table><tr><td><b>Total Injuries: </b>" + "&nbsp; " + "</td><td>  ${Injuries}</td></tr></table>";
+                                     
+                                         }*/
                                    	} else if (bike){
                                          
-                                         
+                                         //if (yearly) 
                                          {
                                          locTxt = "<table><tr><td><b>Cyclist Injuries: </b>" + "&nbsp;" + " </td><td>${BikeInjuries}</td></tr></table>";
                                    
                                          }
+                                        /* else if (monthly){
+                                         locTxt = "<table><tr><td><b>Total Injuries: </b>" + "&nbsp; " + "</td><td>  ${Injuries}</td></tr></table>";
                                      
+                                         }*/
                                    }
                                   }  if ((locParse == "fatalities" )||(locParse == "F" )) {
                                          if (all) {
@@ -184,7 +196,12 @@ function executeIdentifyTask(evt) {
                                         locTxt += "<table><tr><td><b>Cyclist Injuries: </b></td><td>" + "&nbsp; " + "  ${BikeInjuries}</td></tr></table>";
                                        
                                          }
-                                    
+                                        /* else if (monthly){
+                                         locTxt = "<table><tr><td><b>Total Fatalities: </b></td><td>" + "&nbsp; " + "  ${Fatalities}</td></tr></table>";
+                                         locTxt += "<table><tr><td><b>Total Injuries: </b></td><td>" + "&nbsp; " + "  ${Injuries}</td></tr></table>";
+                                  
+                                                
+                                         }*/
 
                                   }
                                 
@@ -266,18 +283,18 @@ function executeIdentifyTask(evt) {
                            var locTxt;
                            if (all) {
                                   locTxt = "<table><tr><td><b>Total Fatalites: </b>" + "&nbsp; " + "</td><td> ${Fatalities}</td></tr></table>";
-                                
+                                //  locTxt += "<table><tr><td><b>Non-Injury Crashes: </b>" + "&nbsp; " + "</td><td> ${NonInjuryCrashes}</td></tr></table>";
                            } else if (motor) {
                                   locTxt = "<table><tr><td><b>Motorist Fatalites: </b>" + "&nbsp; " + "</td><td> ${MVOFatalities}</td></tr></table>";
-                                
+                                //  locTxt += "<table><tr><td><b>Non-Injury Crashes: </b>" + "&nbsp; " + "</td><td> ${NonInjuryCrashes}</td></tr></table>";
                            }
                            else if (bike) {
                                   locTxt = "<table><tr><td><b>Cyclist Fatalites: </b>" + "&nbsp; " + "</td><td> ${BikeFatalities}</td></tr></table>";
-                             
+                                //  locTxt += "<table><tr><td><b>Non-Injury Crashes: </b>" + "&nbsp; " + "</td><td> ${NonInjuryCrashes}</td></tr></table>";
                            }
                            else if (ped) {
                                   locTxt = "<table><tr><td><b>Pedestrian Fatalites: </b>" + "&nbsp; " + "</td><td> ${PedFatalities}</td></tr></table>";
-                             
+                                //  locTxt += "<table><tr><td><b>Non-Injury Crashes: </b>" + "&nbsp; " + "</td><td> ${NonInjuryCrashes}</td></tr></table>";
                            }
 
                            var template = new esri.InfoTemplate();
@@ -340,8 +357,8 @@ function executeIdentifyTask(evt) {
                                   break;
                                   
                                   case  "SAFETY_ENGG_SIP_Corridors": case "SAFETY_ENGG_SIP_Intersections":                     
-                                  locTxt = "<table><tr><td><b>Project Name:" + "&nbsp;" + "</b>${Proj_Name}</td></tr>";
-                                  locTxt += "<tr><td><b>Project Type:</b>" + "&nbsp;" + "${SIP_Proj_T}</td></tr></table>";
+                                  locTxt = "<table><tr><td><b>Project Name:" + "&nbsp;" + "</b>${Pjct_Name}</td></tr>";
+                                  locTxt += "<tr><td><b>Project Type:</b>" + "&nbsp;" + "${SIPProjTyp}</td></tr></table>";
                                   template.setTitle("Safety Engineering Projects");
                                   break;
 

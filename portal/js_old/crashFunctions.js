@@ -167,7 +167,11 @@ $(document).ready(function() {
 });
 
 /*************************** layer toggle functions *****************************************************/
-
+/*
+*
+var fatality, injury;
+var monthly, yearly;
+var all, ped, bike, motor;*/
 
 
 function injuryMonthlySet(curInjuryValue){
@@ -295,7 +299,7 @@ function toggleCrashLayers() {
               if (monthly) {
 
                      if (all) {
-                         
+                           //var curInjuryValue;  // toolTipVal;
                            allCrashLayersOff();
 
                            injury_monthly_all_Layer.setVisibility(true);
@@ -898,7 +902,9 @@ function checkCrashCatState() {
                      }
                      toggleCrashLayers();
               }, 20);
+       //     toggleCrashLayers();
 
+       //map.infoWindow.hide();
 
               setTimeout(function() {
                      if ($("#monthlyBtn").hasClass('active')) {
@@ -918,6 +924,9 @@ function checkCrashCatState() {
                      toggleCrashLayers();
               }, 20);
 
+       //map.infoWindow.hide();
 
+       //console.log(ped + " " + bike + " " + motor + " " + all);
+//     toggleCrashLayers();
 
 }
