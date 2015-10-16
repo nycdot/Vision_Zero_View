@@ -1,6 +1,6 @@
 
 			   $(document).ready(function () {
-			
+			  // 	 $("#sliderDiv").css("display", "none"); 
 			   	
                 $("#jqxslider").jqxSlider({
                     theme: 'bootstrap',
@@ -12,16 +12,17 @@
                     ticksFrequency: 1,
                     tooltip: false
                 });
-             
+              //  createTooltip();
                 var upperTicks = $("#jqxslider .jqx-slider-tickscontainer:eq(0)").children();
                 var lowerTicks = $("#jqxslider .jqx-slider-tickscontainer:eq(1)").children();
                 for (var i = 0; i < upperTicks.length; i++) {
                     if (i % 12 !=0) {
-                     
+                      //  $(upperTicks[i]).css("display", "none");
                         $(lowerTicks[i]).css("display", "none");
                     };
                 };
-           
+              //  $("#sliderDiv").css("display", "block");  
+               //  $(".jqx-slider-tickscontainer").css("display", "block"); 
 			});
 			
 				$(document).ready(function () {
@@ -35,9 +36,17 @@
                     ticksFrequency: 1,
                     tooltip: false
                 });
-        
+              //  createTooltip();
                 var upperTicks = $("#jqxslider .jqx-slider-tickscontainer:eq(0)").children();
-
+              //  var lowerTicks = $("#jqxslider .jqx-slider-tickscontainer:eq(1)").children();
+              //  for (var i = 0; i < upperTicks.length; i++) {
+                  //  if (i % 12 !=0) {
+                      //  $(upperTicks[i]).css("display", "none");
+                        //$(lowerTicks[i]).css("display", "none");
+                  //  };
+               // }; 
+               
+               //tooltip.css('visibility', 'visible');
 			});
 
 
@@ -46,9 +55,11 @@
 function sliderSetup () {
 
 	var visibleFatalityLayerIds = [], visibleInjuryLayerIds = [];
+//	var curFatalityValue, curInjuryValue;
+	
 
-				
-/////////////////// monthly slider ///////////////////////////////////////////////////////	
+			
+		/////////////////// monthly slider ///////////////////////////////////////////////////////	
 
 	var thumb = $($('#jqxslider').find('.jqx-slider-slider')[1]), tooltip = createTooltip(), tooltipActive = true;
 
@@ -202,7 +213,7 @@ function slider2Lookup(value) {
 			locYear = "2014";
 			break;
 		case 6:
-		
+			//locYear = "As of Jan. 31st 2015";
 			locYear = updateDate2;
 			break;
 		default:
