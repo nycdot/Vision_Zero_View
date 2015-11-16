@@ -5,16 +5,6 @@
 <!--[if gt IE 8]>	   <html class="no-js" lang="en"><![endif]-->
 <html lang="en">
 
-
-<!--- this is the home index page for Vision Zero View NYC -->
-<!--- the init javascript code is at the end of this file -->
-<!--- built using ArcGIS Javascript API, JQuery, and Bootstrap -->
-<!--- see nyc.gov/dot - data feed page for links to shapefiles and geoJSONs of data used here -->
-<!--- created by the GIS team, IT & Telecom, NYC Department of Transportation -->
-<!--- please let us know if you use this code, or have any comments - jfitzsimmons@dot.nyc.gov -->
-
-
-
 	<head>
 		<meta charset="utf-8" />
 		<meta name="description" content="" />
@@ -33,7 +23,7 @@
 
 		<title>Vision Zero View</title>
 			
-		
+		<!--Quick Test-->
 		<link rel="stylesheet" type="text/css" href="lib/bootstrap-3.1.1-dist/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
 		<link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
@@ -53,6 +43,7 @@
 
 		
 
+		<!--<link rel="stylesheet" type="text/css" href="css/site.min.css"> -->
 
 		<link rel="apple-touch-icon" sizes="57x57" href="img/logo/touch-icon-iphone.png">
 		<link rel="apple-touch-icon" sizes="72x72" href="img/logo/touch-icon-ipad.png">
@@ -957,7 +948,11 @@
 									$("#jqxslider2").jqxSlider({
 										value : 6
 									});
-
+								//var toolTipVal;
+								//if (monthly) toolTipVal = sliderLookup(72);
+								//else toolTipVal = slider2Lookup(6);
+								
+								//$("#date3Label").text(toolTipVal);
 									
 								}
 								if (($("#jqxslider").is(':visible')) || ($("#jqxslider2").is(':visible'))) {
@@ -997,6 +992,7 @@
 								anchor : "top"
 							}, dojo.create("div"));
 
+							/// new August 12 ////////
 
 							$(document).ready(function() {
 								var curWidth = $(window).width();
@@ -1142,6 +1138,7 @@
 					<script type="text/javascript" src="js/smallScreenButtonFuncs.js"></script>
 						
 
+					<!--<script type="text/javascript" src="js/applib.js"></script>-->
 
 	</body>
 </html>
