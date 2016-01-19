@@ -73,6 +73,7 @@ $(document).ready(function () {
 
 
 $(".categoriesNav").on(evt, function () {
+	map.graphics.clear();
     var id = this.id;
     activeCategory = id;
 

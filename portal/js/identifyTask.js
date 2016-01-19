@@ -113,7 +113,7 @@ function executeIdentifyTask(evt) {
                              //     console.log("how many : " + feature.length);
                                    
                                   var locName = result.layerName;
-                                  console.log("layername : " + locName);
+                                  //console.log("layername : " + locName);
                                   var split, locParse;
                                   if (monthly){
                                          split = locName.split("_"); 
