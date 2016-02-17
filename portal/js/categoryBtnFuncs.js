@@ -97,11 +97,11 @@ function CategoryNav(id) {
     	//$("#injurySumLegend").css("display", "none");
 		//$("#fatalitySumLegend").css("display", "none");
 
-        _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/SUMMARY_2014_INJURIES/MapServer";
+        _layerURL = "//"  + arcgisserver + "/arcgis/rest/services/Vision_Zero/SUMMARY_2014_INJURIES/MapServer";
         _layerID = "summaryInjuryLayer";
         summaryInjuryLayer = AddDynamicLayer(_layerURL, _layerID, true);
 
-        _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/SUMMARY_2014_FATALITIES/MapServer";
+        _layerURL = "//"  + arcgisserver + "/arcgis/rest/services/Vision_Zero/SUMMARY_2014_FATALITIES/MapServer";
         _layerID = "summaryFatalityLayer";
         summaryFatalityLayer = AddDynamicLayer(_layerURL, _layerID, true);
 
@@ -125,7 +125,7 @@ function CategoryNav(id) {
 
 
 
-        _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/SAFETY_INTERVENTIONS/MapServer";
+        _layerURL = "//"  + arcgisserver + "/arcgis/rest/services/Vision_Zero/SAFETY_INTERVENTIONS/MapServer";
         _layerID = "interventionLayer";
         interventionLayer = AddDynamicLayer(_layerURL, _layerID, true);
 
@@ -143,7 +143,7 @@ function CategoryNav(id) {
 
     } else if (id == "outreachCat") {
 
-        _layerURL = "http://" + arcgisserver + "/arcgis/rest/services/Vision_Zero/OUTREACH/MapServer";
+        _layerURL = "//"  + arcgisserver + "/arcgis/rest/services/Vision_Zero/OUTREACH/MapServer";
         _layerID = "outreachLayer";
         outreachLayer = AddDynamicLayer(_layerURL, _layerID, true);
 

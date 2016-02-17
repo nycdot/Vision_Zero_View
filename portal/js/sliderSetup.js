@@ -30,7 +30,7 @@
                     theme: 'bootstrap',
                     value: 0,
                     min: 0,
-                    max: 6,  // ticks until 2015
+                    max: 7,  // ticks until 2016
                     mode: "fixed",
                     step: 1,
                     ticksFrequency: 1,
@@ -178,6 +178,9 @@ function sliderLookup(value) {
 		case 6:
 			locYear = "2015";
 			break;
+		case 7:
+			locYear = "2016";
+			break;
 		default:
 			locYear = "2009";
 			break;
@@ -213,6 +216,12 @@ function slider2Lookup(value) {
 			locYear = "2014";
 			break;
 		case 6:
+			locYear = "2015";
+			break;
+		case 7:
+			locYear = "2016";
+			break;
+		case 8:
 			//locYear = "As of Jan. 31st 2015";
 			locYear = updateDate2;
 			break;

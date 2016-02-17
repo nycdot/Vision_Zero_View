@@ -10,31 +10,31 @@ function IdentifyTaskInit() {
               allIdentifyParams.height = map.height;
               
               
-              fatality_monthly_all_IdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/allFatalities_monthly/MapServer");
-              fatality_monthly_ped_IdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/pedFatalities_monthly/MapServer");
-              fatality_monthly_bike_IdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/bikeFatalities_monthly/MapServer");
-              fatality_monthly_motor_IdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/motorFatalities_monthly/MapServer");
+              fatality_monthly_all_IdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/allFatalities_monthly/MapServer");
+              fatality_monthly_ped_IdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/pedFatalities_monthly/MapServer");
+              fatality_monthly_bike_IdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/bikeFatalities_monthly/MapServer");
+              fatality_monthly_motor_IdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/motorFatalities_monthly/MapServer");
 
-              fatality_yearly_all_IdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/allFatalities_yearly/MapServer");
-              fatality_yearly_ped_IdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/pedFatalities_yearly/MapServer");
-              fatality_yearly_bike_IdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/bikeFatalities_yearly/MapServer");
-              fatality_yearly_motor_IdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/motorFatalities_yearly/MapServer");
+              fatality_yearly_all_IdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/allFatalities_yearly/MapServer");
+              fatality_yearly_ped_IdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/pedFatalities_yearly/MapServer");
+              fatality_yearly_bike_IdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/bikeFatalities_yearly/MapServer");
+              fatality_yearly_motor_IdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/motorFatalities_yearly/MapServer");
 
-              injury_monthly_all_IdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/all_monthly_Injuries_and_fatalities/MapServer");
-              injury_monthly_ped_IdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/pedFatalities_and_Injuries_monthly/MapServer");
-              injury_monthly_bike_IdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/bikeFatalities_and_Injuries_monthly/MapServer");
-              injury_monthly_motor_IdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/motorFatalities_and_Injuries_monthly/MapServer");
+              injury_monthly_all_IdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/all_monthly_Injuries_and_fatalities/MapServer");
+              injury_monthly_ped_IdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/pedFatalities_and_Injuries_monthly/MapServer");
+              injury_monthly_bike_IdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/bikeFatalities_and_Injuries_monthly/MapServer");
+              injury_monthly_motor_IdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/motorFatalities_and_Injuries_monthly/MapServer");
 
-              injury_yearly_all_IdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/allInjury_yearly/MapServer");
-              injury_yearly_ped_IdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/pedInjury_yearly/MapServer");
-              injury_yearly_bike_IdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/bikeInjury_yearly/MapServer");
-              injury_yearly_motor_IdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/motorInjury_yearly/MapServer");
+              injury_yearly_all_IdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/allInjury_yearly/MapServer");
+              injury_yearly_ped_IdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/pedInjury_yearly/MapServer");
+              injury_yearly_bike_IdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/bikeInjury_yearly/MapServer");
+              injury_yearly_motor_IdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/motorInjury_yearly/MapServer");
 
 
-              interventionIdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/SAFETY_INTERVENTIONS/MapServer");
-              outreachIdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/OUTREACH/MapServer");
-              summaryInjIdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/SUMMARY_2014_INJURIES/MapServer");
-              summaryFatalIdentifyTask = new esri.tasks.IdentifyTask("http://"+ arcgisserver + "/arcgis/rest/services/Vision_Zero/SUMMARY_2014_FATALITIES/MapServer");
+              interventionIdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/SAFETY_INTERVENTIONS/MapServer");
+              outreachIdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/OUTREACH/MapServer");
+              summaryInjIdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/SUMMARY_2014_INJURIES/MapServer");
+              summaryFatalIdentifyTask = new esri.tasks.IdentifyTask("//" + arcgisserver + "/arcgis/rest/services/Vision_Zero/SUMMARY_2014_FATALITIES/MapServer");
                            
               dojo.connect(map, "onClick", executeIdentifyTask);
               dojo.connect(map, "touchend", executeIdentifyTask);
