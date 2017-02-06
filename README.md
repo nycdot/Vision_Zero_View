@@ -1,6 +1,6 @@
 VisionZeroView
 =====================
-This map illustrates the intervention strategies to drive traffic fatalities down to zero in NYC by 2017.
+This map illustrates the intervention strategies to drive traffic fatalities down to zero in NYC.
 
   Functionalities include:<br>
  +1. Crash data summary<br>
