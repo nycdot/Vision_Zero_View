@@ -7,3 +7,6 @@ The map illustrate the intervention strategies to drive traffic fatalities down 
  +2. Intervention projects<br>
  +3. Outreach dataset<br>
  +4. Summarized crash & intervention by administrative boundaries<br>
+
+
+no longer used, get code updates for vzv on https://github.com/nycdot/VisionZeroView
