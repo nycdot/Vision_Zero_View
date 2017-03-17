@@ -13,7 +13,39 @@ padding-left:0px;
 padding-right:0px;
 }
 
+/* new Jan 2017 */
+.labelRow_vz {
+   padding-right: 10px !important;
+   border-right: 1px;
+ }
+ .labelRow_vz2 {
+    padding-right:4px !important;
+    border-right: 1px;
+  }
 
+
+#labelTable_info {
+    /*border:1px solid #CCC;*/
+
+
+
+}
+#labelTable_info td {
+  /*  border:none;
+    padding-right: 10px !important;*/
+
+}
+
+/* // new June 2016 // dialog for alerts  */
+.ui-dialog-titlebar-close {
+    visibility: hidden;
+}
+
+/* new Oct 2016 - small text for date info in infowindow */
+.dateText {
+  font-size: .8em;
+
+}
 
 /*===============================================================Black Bar with NYC and 311 links========================================================================================*/
 #blackBar.container-fluid{
@@ -216,6 +248,21 @@ padding: 10px;
   display: none;
 }
 
+/*new Jan 2017 */
+#logo-stack{
+/*  width: auto;*/
+  width:58px;
+  position: absolute;
+  top: auto;
+  bottom: 110px;
+  left: 28px;
+  font-size: 16px;
+  z-index: 999;
+  display: block;
+}
+
+
+
 #jqxslider {
     width: 50em !important;
     margin-left:auto; margin-right: auto;
@@ -302,6 +349,20 @@ z-index: 39;
 box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 display: block;
 padding: 8px 10px 10px 10px;
+}
+
+.labelDiv_info{
+  border-radius: 4px;
+  position: relative;
+  /*top: 10px;
+  left: 25px;*/
+  background-color: #FFF;
+  /*opacity: 0.8;*/
+  z-index: 39;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3);
+  display: block;
+  padding: 8px 10px 10px 10px;
+
 }
 
 #labelTable{
@@ -406,4 +467,3 @@ text-decoration: none;
        color: ##D5D5D5;
        cursor: pointer;
 }
-

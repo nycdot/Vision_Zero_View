@@ -1,67 +1,72 @@
 @font-face {
-	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?d21qi4');
-	src:url('fonts/icomoon.eot?#iefixd21qi4') format('embedded-opentype'),
-		url('fonts/icomoon.woff?d21qi4') format('woff'),
-		url('fonts/icomoon.ttf?d21qi4') format('truetype'),
-		url('fonts/icomoon.svg?d21qi4#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?kwk35d');
+    src:    url('fonts/icomoon.eot?kwk35d#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?kwk35d') format('truetype'),
+        url('fonts/icomoon.woff?kwk35d') format('woff'),
+        url('fonts/icomoon.svg?kwk35d#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"] {
-	font-family: 'icomoon';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
 
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-icon_36895:before {
-	content: "\33";
-}
-.icon-icon_22494:before {
-	content: "\34";
-}
 .icon-uni21:before {
-	content: "\21";
+    content: "\21";
 }
 .icon-uni24:before {
-	content: "\24";
+    content: "\24";
 }
 .icon-uni25:before {
-	content: "\25";
+    content: "\25";
+}
+.icon-odom4:before {
+    content: "\26";
 }
 .icon-uni30:before {
-	content: "\30";
+    content: "\30";
 }
 .icon-uni31:before {
-	content: "\31";
+    content: "\31";
 }
 .icon-uni32:before {
-	content: "\32";
+    content: "\32";
+}
+.icon-uni33:before {
+    content: "\33";
+}
+.icon-uni34:before {
+    content: "\34";
 }
 .icon-uni35:before {
-	content: "\35";
+    content: "\35";
 }
 .icon-uni37:before {
-	content: "\37";
+    content: "\37";
 }
 .icon-uni38:before {
-	content: "\38";
+    content: "\38";
 }
 .icon-uni39:before {
-	content: "\39";
+    content: "\39";
 }
 .icon-uni40:before {
-	content: "\40";
+    content: "\40";
 }
 .icon-uni5E:before {
-	content: "\5e";
+    content: "\5e";
 }
+

@@ -1,6 +1,12 @@
  ///////////////////////////////// new geocoder ///////////////////////////////////////////////////////////
  var boroCode, symbol, infoTemplate, address, fullAddress;
 
+ //
+ // window.alert = function (message) {
+ //  message = "this";
+ // };
+ //
+ //
 
 function LocationSearch() {
 
@@ -8,16 +14,27 @@ function LocationSearch() {
       boroCode = "";
       boroCode = $("#searchBorough").text().trim();
 
-      if (boroCode == "") { 
-        alert("Please select a borough.");
+      //if (boroCode == "") {
+	   if (boroCode == "" || boroCode == "Borough") {
+        //alert("Please select a borough.");
+		$(".modal-alert-body").text("Please select a borough.");
+        $('#alertModal').modal('show');
+
         return;
       }
       address = $("#address").val();
+	  if (address  == "" ) {
+        //alert("Please enter an address");
+		$(".modal-alert-body").text("Please enter an address.");
+        $('#alertModal').modal('show');
+		 return;
+		}
+
 
       codeAddress(address) ;
   });
-    
-  $('#address').keydown(function(event){    
+
+  $('#address').keydown(function(event){
     if(event.keyCode==13){
         event.preventDefault();
         $('#btnsearch').trigger('click');
@@ -32,11 +49,20 @@ function LocationSearch1() {
     boroCode = "";
     boroCode = $("#searchBorough1").text().trim();
 
-    if (boroCode == "") { 
-      alert("Please select a borough.");
+	if (boroCode == "" || boroCode == "Borough") {
+        //alert("Please select a borough.");
+		$(".modal-alert-body").text("Please select a borough.");
+        $('#alertModal').modal('show');
       return;
     }
     address = $("#address1").val();
+		if (address  == "" ) {
+        //alert("Please enter an address");
+		$(".modal-alert-body").text("Please enter an address.");
+        $('#alertModal').modal('show');
+
+		return;
+		}
     codeAddress(address) ;
 
   });
@@ -62,7 +88,7 @@ function codeAddress(address) {
 
 
   geocoder.geocode({
-    'address': address,  // ', NY',         
+    'address': address,  // ', NY',
     'bounds': bounds,
     // 'components': locality | 'New York'
     'region': 'US'
@@ -70,12 +96,18 @@ function codeAddress(address) {
 
     var route ="", street_num =""; county = ""; boro =""; site="";
     var exactMatch = 0;
-  		
-  	if (status != google.maps.GeocoderStatus.OK) {alert("No matched location for this address in "+boroName+".");}
+
+  	if (status != google.maps.GeocoderStatus.OK)
+    {
+      /// new ///
+      $(".modal-alert-body").text("Address not found.");
+
+      $('#alertModal').modal('show')
+    }
   	else {var test = results[0].formatted_address;}
-  		
+
   	var loclength = results[0].address_components.length;
-  		
+
   	for (var i=0; i<loclength; i++)
   	{
   		var curString = results[0].address_components[i].types;
@@ -83,7 +115,7 @@ function codeAddress(address) {
   		if (results[0].address_components[i].types == "route")
   		{
   			route = results[0].address_components[i].long_name;
-  				
+
   		}
   		if (results[0].address_components[i].types == "street_number")
   		{
@@ -94,7 +126,8 @@ function codeAddress(address) {
   			county  = results[0].address_components[i].long_name;
 
   		}
-  		if (results[0].address_components[i].types ==  "sublocality_level_1,sublocality,political")
+  		//if (results[0].address_components[i].types ==  "sublocality_level_1,sublocality,political")
+		if (results[0].address_components[i].types ==  "political,sublocality,sublocality_level_1")
   		{
   			boro  = results[0].address_components[i].long_name;
 
@@ -104,12 +137,12 @@ function codeAddress(address) {
   			site  = results[0].address_components[i].long_name;
 
   		}
-  			  			
-  		else {continue;}  
-  	}  
-  		
 
-    if (status == google.maps.GeocoderStatus.OK) 
+  		else {continue;}
+  	}
+
+
+    if (status == google.maps.GeocoderStatus.OK)
     {
 
       if ((results[0].geometry.location.lat() > 40.916107) || (results[0].geometry.location.lat() < 40.495265)
@@ -121,19 +154,29 @@ function codeAddress(address) {
       }
       if (route =="" && street_num == "" && site =="")
       {
-        alert("Address not found.");
+        /// new ///
+      $(".modal-alert-body").text("Address not found.");
+
+      $('#alertModal').modal('show')
+
+
+
         return;
       }
       if (county !="Richmond County" && county !="Queens County" && county !="New York County" && county !="Bronx County" && county != "Kings County")
       {
-       	
-       	alert("No address match in " + boroName + ".");
+
+       	alert("No address match in " + boroCode + ".");
+	  //$(".modal-alert-body").text("No address match in " + boroName + ".");
+       //$('#alertModal').modal('show');
        	return;
       }
       if (boroCode != boro)
       {
 
-        alert("Address not found in " + boroCode + ". Resubmit your entry, \nincluding road type (street, avenue etc.) and try again.");
+        //alert("Address not found in " + boroCode + ". Resubmit your entry, \nincluding road type (street, avenue etc.) and try again.");
+		$(".modal-alert-body").text("Address not found in " + boroCode + ". Resubmit your entry, \nincluding road type (street, avenue etc.) and try again.");
+        $('#alertModal').modal('show');
         return;
       }
 
@@ -142,11 +185,11 @@ function codeAddress(address) {
         if (route  && route!=address)
         {
           var routeParse = route.split(" ");
-          var loclL = routeParse.length; 
+          var loclL = routeParse.length;
           for (var i =0; i<loclL; i++)
           {
             var lower = routeParse[i].toLowerCase(); var locAddy = address.toLowerCase();
-					
+
 					  if (lower == "street") {lower = "xxx";}
 				    if (locAddy.indexOf(lower) ==-1) { /* nothing */}
 					 else { exactMatch = 1; break;}
@@ -155,7 +198,7 @@ function codeAddress(address) {
 
         }
 
-        if (exactMatch == 1) 
+        if (exactMatch == 1)
         {
 
           var lat = results[0].geometry.location.lat();
@@ -167,13 +210,13 @@ function codeAddress(address) {
 
           zoomTo(lat, lon)
 
-        } 
+        }
         else
         {
 
           var lat = results[0].geometry.location.lat();
           var lon = results[0].geometry.location.lng();
-		  
+
 		            var thisAddress = results[0].formatted_address;
 
           fullAddress = thisAddress.substring(0, thisAddress.length-5);
@@ -185,12 +228,10 @@ function codeAddress(address) {
       }
 
 
-      } 
-      else 
+      }
+      else
       {
         alert("The address could not be validated, please try entering a different address.");
       }
   });
 }
-
-

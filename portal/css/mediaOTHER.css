@@ -1,5 +1,9 @@
 /*Used to switch the first search input into a toggle button at smaller screen widths*/
-@media (max-width: 1147px) {
+/*@media (max-width: 1147px) {
+ new December 2016 */
+
+@media (max-width: 1337px) {
+
 
     #searchNav.navbar-toggle {
         display: block;
@@ -70,6 +74,8 @@
 
 /*Used to display the Layer toggle button in the title bar*/
 @media (max-width: 1015px) and (min-width:768px){
+
+  /* new December 2016 */
 	.btn {
 	display: inline-block;
 	margin-bottom: 0;

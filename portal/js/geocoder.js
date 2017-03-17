@@ -1,4 +1,4 @@
-
+var timeout;
 
 $(document).ready(function () {
 
@@ -89,18 +89,35 @@ function wktToEsriGeometry(wkt_string) {
 }
 
 function getCurrentLocation() {
+console.log("Get to geolocate");
 	
 	var online = navigator.onLine;
-	//console.log(online);
+	console.log(online);
 	
 	showLoading();
+	console.log("get past loading");
     if (navigator.geolocation) {
+	console.log("geo true");
         navigator.geolocation.getCurrentPosition(addGeolocationMarker, locationError);
+		
+		timeout = setTimeout(function(){
+			//$("#loadingImg").hide();
+			hideLoading();
+			$(".modal-alert-body").text("Something's wrong - check your network connection and location settings");
+       $('#alertModal').modal('show');
+			//alert("somethings up?");
+		}, 6000);
+		
+		
         return true;
     }
     else {
-        alert("Browser doesn't support Geolocation. Visit http://caniuse.com to discover browser support for the Geolocation API.");
-        firstView = false;
+        $(".modal-alert-body").text("Browser doesn't support Geolocation. Visit http://caniuse.com to discover browser support for the Geolocation API.");
+			clearTimeout (timeout);
+        $('#alertModal').modal('show');
+		//alert("Browser doesn't support Geolocation. Visit http://caniuse.com to discover browser support for the Geolocation API.");
+          hideLoading();
+		  firstView = false;
         return false;
     }
 }
@@ -108,6 +125,7 @@ function getCurrentLocation() {
 
 
 function addGeolocationMarker(location) {
+//console.log("get to here?");
 	
 
         
@@ -140,7 +158,10 @@ function addGeolocationMarker(location) {
             return true;
         }
         else {
-            alert("Your location is outside of the City of New York city limits. This application is for NYC Data only.");
+         $(".modal-alert-body").text("Your location is outside of the City of New York city limits. This application is for NYC Data only.");
+
+        $('#alertModal').modal('show');
+		//alert("Your location is outside of the City of New York city limits. This application is for NYC Data only.");
              hideLoading();
             return false;
         }
@@ -149,20 +170,35 @@ function addGeolocationMarker(location) {
 
 
 function locationError(error) {
+//console.log("Get to geolocate error");
     //hideLoading();
     firstView = false;
+	clearTimeout (timeout);
     switch (error.code) {
         case error.PERMISSION_DENIED:
-            alert("Location Services: Location not provided. Check your browser settings.");
+        $(".modal-alert-body").text("Location Services: Location not provided. Check your settings.");
+
+        $('#alertModal').modal('show');
+
+          //  alert("Location Services: Location not provided. Check your settings.");
             break;
         case error.POSITION_UNAVAILABLE:
-            alert("Location Services: Current location not available");
+        $(".modal-alert-body").text("Location Services: Location not provided. Check your settings.");
+
+        $('#alertModal').modal('show');
+          //  alert("Location Services: Current location not available");
             break;
         case error.TIMEOUT:
-            alert("Location Services: Timeout");
+        $(".modal-alert-body").text("Location Services: Location not provided. Check your settings.");
+
+        $('#alertModal').modal('show');
+          //  alert("Location Services: Timeout");
             break;
         default:
-            alert("Location Services: Unknown Error");
+        $(".modal-alert-body").text("Location Services: Location not provided. Check your settings.");
+
+        $('#alertModal').modal('show');
+            //alert("Location Services: Unknown Error");
             break;
     }
     

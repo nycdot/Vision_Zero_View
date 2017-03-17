@@ -3,27 +3,66 @@
 
 var activeCategory;
 
-$('#InjuryModal, #SafetyModal, #OutreachModal, #SummaryModal, #info-modal').on('show.bs.modal', function (e) {
-	
+$('#InjuryModal, #SafetyModal, #OutreachModal, #SummaryModal, #SpeedLimitModal, #info-modal').on('show.bs.modal', function (e) {
+
 	 map.infoWindow.hide();
 });
 
 function showLoading() {
-	$('button').addClass('disabled'); 
+	$('button').addClass('disabled');
     $('button').prop('disabled', true);
-    
+
     $('a').addClass('disabled');
     $('a').prop('disabled', true);
     $('a').attr('disabled', true);
 
-    $("#loadingImg").show();
+
+     //new June 2016
+	/* function loading() { $("#loadingImg").show(); }
+
+
+	  var timeout = function () {
+	  setInterval(function(){ loading();  }, 4000);
+
+	  clearInterval (timeout);
+	 }
+
+
+	  setTimeout(function(){
+			$("#loadingImg").hide();
+			alert("somethings up");
+		}, 4000);
+
+	   $("#loadingImg").show(0, '', function () {
+
+		setTimeout(function(){
+			$("#loadingImg").hide();
+			alert("somethings up");
+		}, 4000);
+		});*/
+
+
+		$("#loadingImg").show();
+		/*  setTimeout(function(){
+			//$("#loadingImg").hide();
+			hideLoading();
+			alert("somethings up");
+		}, 6000);*/
+
 }
+
+
+
+
+//}
 
 //show map loading image
 function hideLoading() {
+
+clearTimeout (timeout);
 	$('button').removeClass('disabled');
     $('button').prop('disabled', false);
-    
+
     $('a').removeClass('disabled');
     $('a').prop('disabled', false);
     $('a').attr('disabled', false);
@@ -35,26 +74,40 @@ function hideLoading() {
 function hideSlider() {
 
     $("#sliderDiv").hide();
-     $(".jqx-slider-tickscontainer").hide(); 
+     $(".jqx-slider-tickscontainer").hide();
 
 }
 
 function showSlider() {
     $("#sliderDiv").show();
-    $(".jqx-slider-tickscontainer").show(); 
+    $(".jqx-slider-tickscontainer").show();
     $("#sliderDiv").css("opacity", 1);
 
 }
 
 
 $(document).ready(function () {
-    $("#ArterialSlowZone").prop('checked', true);
-    $("#ArterialSlowZone").addClass('active');
+    $("#ArterialSlowZone").prop('checked', false);
+
     $("#SafeStreetsForSeniors").prop('checked', false);
     $("#NeighborhoodSlowZone").prop('checked', false);
     $("#EngineeringImprovements").prop('checked', false);
     $("#SpeedHump").prop('checked', false);
-    $("#LeadingPedestrianSignals").prop('checked', false);
+    //$("#LeadingPedestrianSignals").prop('checked', true);
+  	//$("#LeadingPedestrianSignals").addClass('active');
+
+
+    $("#SL25").prop('checked', true);
+    $("#SL25").addClass('active');
+    $("#SL25Unsigned").prop('checked', true);
+    $("#SL25Unsigned").addClass('active');
+    $("#SL20").prop('checked', false);
+    $("#SL30").prop('checked', false);
+    $("#SL35").prop('checked', false);
+    $("#SL40").prop('checked', false);
+    $("#SL45").prop('checked', false);
+    $("#SL50").prop('checked', true);
+
 
     $("#Schools").prop('checked', true);
     $("#Schools").addClass('active');
@@ -66,9 +119,10 @@ $(document).ready(function () {
     $("#summaryInjuries").prop('checked', true);
     $("#summaryInjuries").addClass('active');
     $("#allLabel").addClass('active');
-    police = true, community = false, council = false;
+    police = true, community = false, council = false, borough = false;
     injurySum = true, fatalitySum = false;
-    all = true; ped = false, bike = false, motor = false;
+    all = true; ped = false, bike = false, motor = false; speedLimit = false;
+	yearly = true; monthly = false;
 });
 
 
@@ -94,14 +148,14 @@ function CategoryNav(id) {
 
     if (id == "summaryCat") {
     	$("#sumLegendDiv").css("display", "block");
-    	//$("#injurySumLegend").css("display", "none");
-		//$("#fatalitySumLegend").css("display", "none");
+			// new Jan 2017 //
+			$("#logo-stack").css("display", "none");
 
-        _layerURL = "//"  + arcgisserver + "/arcgis/rest/services/Vision_Zero/SUMMARY_2014_INJURIES/MapServer";
+        _layerURL = "//"  + arcgisserver + "/arcgis/rest/services/Vision_Zero/SUMMARY_INJURIES/MapServer";
         _layerID = "summaryInjuryLayer";
         summaryInjuryLayer = AddDynamicLayer(_layerURL, _layerID, true);
 
-        _layerURL = "//"  + arcgisserver + "/arcgis/rest/services/Vision_Zero/SUMMARY_2014_FATALITIES/MapServer";
+        _layerURL = "//"  + arcgisserver + "/arcgis/rest/services/Vision_Zero/SUMMARY_FATALITIES/MapServer";
         _layerID = "summaryFatalityLayer";
         summaryFatalityLayer = AddDynamicLayer(_layerURL, _layerID, true);
 
@@ -121,9 +175,34 @@ function CategoryNav(id) {
         //var summaryLayerIDs = [];
         setTimeout(function () { checkSummaryBtns(summaryLayerIDs); }, 20);
 
+
+		} else if (id == "speedLimitCat") {
+
+			// new Jan 2017 //
+				$("#logo-stack").css("display", "none");
+
+        _layerURL = "//"  + arcgisserver + "/arcgis/rest/services/Vision_Zero/speed_limits/MapServer";
+        _layerID = "speedLimitLayer";
+        speedLimitLayer = AddDynamicLayer(_layerURL, _layerID, true);
+
+        speedLimit = true;
+        speedLimitLayerIDs = [];
+        setTimeout(function () {
+            checkSpeedLimitBtns(speedLimitLayerIDs);
+        }, 30);
+
+        $("#sliderDiv").css("display", "none");
+        $("#jqxslider").css("display", "none");
+        $("#jqxslider2").css("display", "none");
+        $("#labelDiv").css("display", "none");
+        $("#date3Label").css("display", "none");
+
+
+
     } else if (id == "interventionCat") {
 
-
+				// new Jan 2017 //
+				$("#logo-stack").css("display", "none");
 
         _layerURL = "//"  + arcgisserver + "/arcgis/rest/services/Vision_Zero/SAFETY_INTERVENTIONS/MapServer";
         _layerID = "interventionLayer";
@@ -142,6 +221,8 @@ function CategoryNav(id) {
         $("#date3Label").css("display", "none");
 
     } else if (id == "outreachCat") {
+			// new Jan 2017 //
+			$("#logo-stack").css("display", "none");
 
         _layerURL = "//"  + arcgisserver + "/arcgis/rest/services/Vision_Zero/OUTREACH/MapServer";
         _layerID = "outreachLayer";
@@ -188,6 +269,7 @@ function removeLayer() {
     var layer3 = map.getLayer("referenceLayer");
     var layer4 = map.getLayer("summaryInjuryLayer");
     var layer5 = map.getLayer("summaryFatalityLayer");
+	var layer6 = map.getLayer("speedLimitLayer");
     if (layer1){
         map.removeLayer(layer1);
 
@@ -207,6 +289,10 @@ function removeLayer() {
         map.removeLayer(layer5);
 
 	}
+	if (layer6){
+        map.removeLayer(layer6);
+
+    }
 }
 
 function allLayersOff() {
@@ -216,6 +302,8 @@ function allLayersOff() {
     yearly = false;
     interventions = false;
     outreach = false;
+	speedLimit = false;
+	//police = false, community = false, council = false;
 
 }
 
@@ -224,6 +312,7 @@ function disableCatButtons() {
     $("#interventionCat").attr("disabled", "disabled");
     $("#outreachCat").attr("disabled", "disabled");
     $("#summaryCat").attr("disabled", "disabled");
+	$("#speedLimitCat").attr("disabled", "disabled");
 }
 
 
@@ -233,64 +322,92 @@ function enableCatButtons() {
     $("#interventionCat").removeAttr("disabled");
     $("#outreachCat").removeAttr("disabled");
     $("#summaryCat").removeAttr("disabled");
+	 $("#speedLimitCat").removeAttr("disabled");
 }
 
 function GhostLayerCleanup() {
 
 	if (activeCategory == "interventionCat") {
-	
-		$('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().remove();
-		$('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().remove();
+
+		$('#map_layers img[src*=SUMMARY_INJURIES]').parent().remove();
+		$('#map_layers img[src*=SUMMARY_FATALITIES]').parent().remove();
 		$('#map_layers img[src*=OUTREACH]').parent().remove();
+		$('#map_layers img[src*=speed_limits]').parent().remove();
 	}
 	if (activeCategory == "outreachCat") {
 
 		$('#map_layers img[src*=INTERVENTION]').parent().remove();
-		$('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().remove();
-		$('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().remove();
+		$('#map_layers img[src*=SUMMARY_INJURIES]').parent().remove();
+		$('#map_layers img[src*=SUMMARY_FATALITIES]').parent().remove();
+		$('#map_layers img[src*=speed_limits]').parent().remove();
 
 	}
 	if (activeCategory == "summaryCat") {
 
 		$('#map_layers img[src*=INTERVENTION]').parent().remove();
 		$('#map_layers img[src*=OUTREACH]').parent().remove();
+		$('#map_layers img[src*=speed_limits]').parent().remove();
 	}
 	if (activeCategory == "injuryCat") {
 
 		$('#map_layers img[src*=INTERVENTION]').parent().remove();
-		$('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().remove();
-		$('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().remove();
+		$('#map_layers img[src*=SUMMARY_INJURIES]').parent().remove();
+		$('#map_layers img[src*=SUMMARY_FATALITIES]').parent().remove();
 		$('#map_layers img[src*=OUTREACH]').parent().remove();
+		$('#map_layers img[src*=speed_limits]').parent().remove();
 	}
+
+	if (activeCategory == "speedLimitCat") {
+
+		$('#map_layers img[src*=INTERVENTION]').parent().remove();
+		$('#map_layers img[src*=SUMMARY_INJURIES]').parent().remove();
+		$('#map_layers img[src*=SUMMARY_FATALITIES]').parent().remove();
+		$('#map_layers img[src*=OUTREACH]').parent().remove();
+
+	}
+
 }
 
 function LayerVisibility() {
 
 	if (activeCategory == "interventionCat") {
 		$('#map_layers img[src*=INTERVENTION]').parent().show();
-		$('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().hide();
-		$('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().hide();
+		$('#map_layers img[src*=SUMMARY_INJURIES]').parent().hide();
+		$('#map_layers img[src*=SUMMARY_FATALITIES]').parent().hide();
 		$('#map_layers img[src*=OUTREACH]').parent().hide();
+		$('#map_layers img[src*=speed_limits]').parent().hide();
 	}
 	if (activeCategory == "outreachCat") {
 
 		$('#map_layers img[src*=INTERVENTION]').parent().hide();
-		$('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().hide();
-		$('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().hide();
+		$('#map_layers img[src*=SUMMARY_INJURIES]').parent().hide();
+		$('#map_layers img[src*=SUMMARY_FATALITIES]').parent().hide();
 		$('#map_layers img[src*=OUTREACH]').parent().show();
+		$('#map_layers img[src*=speed_limits]').parent().hide();
 	}
 	if (activeCategory == "summaryCat") {
 
 		$('#map_layers img[src*=INTERVENTION]').parent().hide();
-		//$('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().show();
-		//$('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().show();
+		//$('#map_layers img[src*=SUMMARY_INJURIES]').parent().show();
+		//$('#map_layers img[src*=SUMMARY_FATALITIES]').parent().show();
 		$('#map_layers img[src*=OUTREACH]').parent().hide();
+		$('#map_layers img[src*=speed_limits]').parent().hide();
 	}
 	if (activeCategory == "injuryCat") {
 
 		$('#map_layers img[src*=INTERVENTION]').parent().hide();
-		$('#map_layers img[src*=SUMMARY_2014_INJURIES]').parent().hide();
-		$('#map_layers img[src*=SUMMARY_2014_FATALITIES]').parent().hide();
+		$('#map_layers img[src*=SUMMARY_INJURIES]').parent().hide();
+		$('#map_layers img[src*=SUMMARY_FATALITIES]').parent().hide();
 		$('#map_layers img[src*=OUTREACH]').parent().hide();
+		$('#map_layers img[src*=speed_limits]').parent().hide();
 	}
+
+	if (activeCategory == "speedLimitCat") {
+		$('#map_layers img[src*=INTERVENTION]').parent().hide();
+		$('#map_layers img[src*=SUMMARY_INJURIES]').parent().hide();
+		$('#map_layers img[src*=SUMMARY_FATALITIES]').parent().hide();
+		$('#map_layers img[src*=OUTREACH]').parent().hide();
+		$('#map_layers img[src*=speed_limits]').parent().show();
+	}
+
 }

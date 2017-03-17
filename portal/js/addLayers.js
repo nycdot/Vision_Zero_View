@@ -29,11 +29,27 @@ map.infoWindow.hide();
 
 function checkInterventionBtns(interventionLayerIDs) {
 
+	if (hasClass('LPIBtn', 'active')){
+
+		var locID = 0;
+		interventionLayerIDs.push(locID);
+	}
+	if (hasClass('engineeringBtn', 'active')){
+
+		var locID = 1;
+		var locID2 = 2;
+		interventionLayerIDs.push(locID, locID2);
+	}
 	if (hasClass('ASZBtn', 'active')){
 
 		var locID = 3;
 		interventionLayerIDs.push(locID);
 
+	}
+	if (hasClass('speedHumpsBtn', 'active')){
+
+		var locID = 4;
+		interventionLayerIDs.push(locID);
 	}
 
 	if (hasClass('SSFSBtn', 'active')){
@@ -46,34 +62,54 @@ function checkInterventionBtns(interventionLayerIDs) {
 
 		var locID = 6;
 		interventionLayerIDs.push(locID);
-	}
 
-	if (hasClass('engineeringBtn', 'active')){
-
-		var locID = 1;
-		var locID2 = 2;
-		interventionLayerIDs.push(locID, locID2);
-	}
-
-	if (hasClass('speedHumpsBtn', 'active')){
-
-		var locID = 4;
-		interventionLayerIDs.push(locID);
 	}
 
 
-	if (hasClass('LPIBtn', 'active')){
+if (hasClass('signalTimingBtn', 'active')){
 
-		var locID = 0;
-		interventionLayerIDs.push(locID);
-	}
-	
+	var locID = 7;
+	interventionLayerIDs.push(locID);
+
+}
+
+if (hasClass('leftTurnTrafficCalmingBtn', 'active')){
+
+	var locID = 8;
+	interventionLayerIDs.push(locID);
+
+}
+
+
+
+// new July 2016
+
+
+
+if (hasClass('VZ_IntersectionsBtn', 'active')){
+
+	var locID = 9;
+	interventionLayerIDs.push(locID);
+}
+
+if (hasClass('VZ_Corridors', 'active')){
+
+	var locID = 10;
+	interventionLayerIDs.push(locID);
+}
+
+if (hasClass('VZ_Zones', 'active')){
+
+	var locID = 11;
+	interventionLayerIDs.push(locID);
+}
+
 	if(interventionLayerIDs.length === 0){
-	
+
 	  interventionLayerIDs.push(-1);
 	}
 
-	
+
 	interventionLayer.setVisibleLayers(interventionLayerIDs);
 
 }
@@ -87,7 +123,7 @@ $(".outreachBtns").bind("click", function() {
 	outreachLayerIDs = [];
 
 	outreachLayerIDs.length = 0;
-	
+
 
 	var test = this;
 
@@ -97,7 +133,7 @@ $(".outreachBtns").bind("click", function() {
 			$(test).css("background-color", "#e4e4e4");
 			$( test ).find( "i" ).css( "opacity", 1);
 			$( test ).find( "span" ).css( "opacity", 1);
-	
+
 		} else {
 			$(this).addClass('active');
 			$(test).css("background-color", "white");
@@ -121,7 +157,7 @@ function checkOutreachBtns(outreachLayerIDs) {
 		//$("#Schools").prop('checked', 'checked');
 
 	}
-	
+
 	if (hasClass('SeniorBtn', 'active')) {
 
 		var locID = 1;
@@ -152,26 +188,135 @@ function checkOutreachBtns(outreachLayerIDs) {
 		outreachLayerIDs.push(locID);
 
 	}
-	
+
 	if (hasClass('HandsOnSafetyDemosBtn', 'active')) {
 
 		var locID = 6;
 		outreachLayerIDs.push(locID);
 
 	}
-	
+
 	if(outreachLayerIDs.length === 0){
-	
+
 	  outreachLayerIDs.push(-1);
 	}
 
-	
+
 	outreachLayer.setVisibleLayers(outreachLayerIDs);
 
 
 
 
 }
+
+
+/////////////////////////  new 2016/////////////////////////////////////////////////////////////////////////////////
+
+
+//$(".outreachBtns").on("touchstart  click", function() {
+$(".speedLimitBtns").bind("click", function() {
+	map.infoWindow.hide();
+	speedLimitLayerIDs = [];
+
+	speedLimitLayerIDs.length = 0;
+
+
+	var test = this;
+
+	setTimeout(function() {
+		if ($(test).hasClass('active')) {
+			$(this).removeClass('active');
+			$(test).css("background-color", "#e4e4e4");
+			$( test ).find( "i" ).css( "opacity", 1);
+			$( test ).find( "span" ).css( "opacity", 1);
+
+
+		} else {
+			$(this).addClass('active');
+			$(test).css("background-color", "white");
+			$( test ).find( "i" ).css( "opacity", .6);
+			$( test ).find( "span" ).css( "opacity", .6);
+
+		}
+	}, 30);
+
+	setTimeout(function() {
+		checkSpeedLimitBtns(speedLimitLayerIDs);
+	}, 20);
+
+});
+
+function checkSpeedLimitBtns(speedLimitLayerIDs) {
+
+
+
+	if (hasClass('20Btn', 'active')) {
+
+		var locID = 1;
+		speedLimitLayerIDs.push(0,1,2,3);
+
+	}
+	if (hasClass('25Btn', 'active')) {
+
+		var locID = 2;
+		speedLimitLayerIDs.push(4,5,6,7);
+
+	}
+	if (hasClass('25UnsignedBtn', 'active')) {
+
+		var locID = 2;
+		speedLimitLayerIDs.push(8,9,10,11);
+
+	}
+	if (hasClass('30Btn', 'active')) {
+
+		var locID = 3;
+		speedLimitLayerIDs.push(12,13,14,15);
+
+	}
+	if (hasClass('35Btn', 'active')) {
+
+		var locID = 4;
+		speedLimitLayerIDs.push(16,17,18,19);
+
+	}
+	if (hasClass('40Btn', 'active')) {
+
+		var locID = 5;
+		speedLimitLayerIDs.push(20,21,22,23);
+
+	}
+
+	if (hasClass('45Btn', 'active')) {
+
+		var locID = 6;
+		speedLimitLayerIDs.push(24,25,26,27);
+
+	}
+
+	if (hasClass('50Btn', 'active')) {
+
+		var locID = 6;
+		speedLimitLayerIDs.push(28,29,30,31);
+
+	}
+
+	if(speedLimitLayerIDs.length === 0){
+
+	  speedLimitLayerIDs.push(-1);
+	}
+
+	//speedLimitLayerIDs.push(32,33,34,35);   // unsigned 25 mph
+
+	speedLimitLayer.setVisibleLayers(speedLimitLayerIDs);
+
+
+
+
+}
+
+
+///////////////////////////////// end new 2016 ////////////////////////////////////////////////////////////////////
 
 function hasClass(elementID, className)
 {
@@ -185,6 +330,9 @@ for (var i = 0; i < classList.length; i++) {
    }
    return false;
 }
+
+
+
 ///////////////////////////////// SUMMARY ////////////////////////////////////////////////////////////////////
 
 function checkSummaryLegend() {
@@ -201,7 +349,11 @@ function checkSummaryLegend() {
 		} else if (council) {
 			$("#injurySumLegendType").text("City Council District");
 
-		}
+		} else if (borough) {
+					$("#injurySumLegendType").text("Borough");
+
+	}
+
 		$("#injurySumLegend").css("display", "block");
 		$("#fatalitySumLegend").css("display", "none");
 	} else if (fatalitySum) {
@@ -215,7 +367,10 @@ function checkSummaryLegend() {
 		} else if (council) {
 			$("#fatalSumLegendType").text("City Council District");
 
-		}
+		} else if (borough) {
+					$("#fatalSumLegendType").text("Borough");
+
+	}
 		$("#injurySumLegend").css("display", "none");
 		$("#fatalitySumLegend").css("display", "block");
 	}
@@ -260,19 +415,25 @@ $(".districtBtns").on("touchstart  click", function() {
 	$('.districtBtns').css("color", "#777"); ($(this).css("background-color", "#3276b1")); ($(this).css("color", "white"));
 
 	if (sumView == "policePrecinct") {
-		police = true, community = false, council = false;
+		police = true, community = false, council = false, borough = false;
 
 		setTimeout(function() {
 			checkSummaryBtns(summaryLayerIDs);
 		}, 20);
 	} else if (sumView == "communityDistrict") {
-		police = false, community = true, council = false;
+		police = false, community = true, council = false, borough = false;
 
 		setTimeout(function() {
 			checkSummaryBtns(summaryLayerIDs);
 		}, 20);
 	} else if (sumView == "cityCouncilDistrict") {
-		police = false, community = false, council = true;
+		police = false, community = false, council = true, borough = false;
+
+		setTimeout(function() {
+			checkSummaryBtns(summaryLayerIDs);
+		}, 20);
+	} else if (sumView == "borough") {
+		police = false, community = false, council = false, borough = true;
 
 		setTimeout(function() {
 			checkSummaryBtns(summaryLayerIDs);
@@ -290,6 +451,8 @@ function checkSummaryBtns(summaryLayerIDs) {
 		summaryLayerIDs.push(1);
 	else if (council)
 		summaryLayerIDs.push(2);
+	else if (borough)
+		summaryLayerIDs.push(3);
 
 	if (injurySum) {
 		summaryInjuryLayer.setVisibility(true);

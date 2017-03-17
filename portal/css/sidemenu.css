@@ -105,6 +105,12 @@ text-align: center !important;
 	color:#FFF;
 }
 
+.speedLimitBtns{
+text-align:left;
+white-space:normal;
+}
+
+
 .input-group.districtBtnGroup{
 	width: 99% !important;
 	padding-top:2em!important;
