@@ -26,41 +26,76 @@ map.infoWindow.hide();
 	}, 20);
 
 });
+/// new MArch 2017
+
+ // new scope
+
 
 function checkInterventionBtns(interventionLayerIDs) {
 
+	 	if ($("#jqxslider_street").is(':visible')) {
+		 street_slider = $('#jqxslider_street').jqxSlider('getValue');
+		} else if ($("#street_yearSelect").is(':visible')){
+			street_slider = parseInt($("#street_yearSelect").val());
+	 	}
+
+	 if (street_slider == 10){
+	 	//$('#sliderDiv_street').css('background-color', 'rgba(0,0,0,.9)');
+		$('#street_dateLabel').css('font-weight', 'bold');
+		$('#street_dateLabel').css('border', '1px solid rgba(242,101,34,.9)');
+		$('.jqx-slider-slider-horizontal').css('background-color', 'rgba(242,101,34,.9)');
+
+	 }
+	 else if  (street_slider == 9){
+		 //$('#sliderDiv_street').css('background-color', 'rgba(0,0,0,.9)');
+	 	$('#street_dateLabel').css('font-weight', 'bold');
+		$('#street_dateLabel').css('border', '1px solid rgba(242,101,34,.9)');
+		$('.jqx-slider-slider-horizontal').css('background-color', 'rgba(242,101,34,.9)');
+	 }
+	 else {
+		//$('#sliderDiv_street').css('background-color', 'rgba(0,0,0,.7)');
+		$('#street_dateLabel').css('font-weight', 'normal');
+		$('#street_dateLabel').css('border', 'none');
+		$('.jqx-slider-slider-horizontal').css('background-color', 'rgb(239,239,239)');
+	 }
+
 	if (hasClass('LPIBtn', 'active')){
 
-		var locID = 0;
+		var locID = 0 +  street_slider;
 		interventionLayerIDs.push(locID);
 	}
 	if (hasClass('engineeringBtn', 'active')){
-
-		var locID = 1;
-		var locID2 = 2;
+		//var locID = 1;
+		//var locID2 = 2;
+		var locID = 11 +  street_slider;
+		var locID2 = 22 +  street_slider;
 		interventionLayerIDs.push(locID, locID2);
 	}
 	if (hasClass('ASZBtn', 'active')){
 
-		var locID = 3;
+		//var locID = 3;
+		var locID = 33 +  street_slider;
 		interventionLayerIDs.push(locID);
 
 	}
 	if (hasClass('speedHumpsBtn', 'active')){
 
-		var locID = 4;
+		//var locID = 4;
+		var locID = 44 +  street_slider;
 		interventionLayerIDs.push(locID);
 	}
 
-	if (hasClass('SSFSBtn', 'active')){
+	/*if (hasClass('SSFSBtn', 'active')){
 
-		var locID = 5;
+		//var locID = 5;
+		var locID = 55 +  street_slider;
 		interventionLayerIDs.push(locID);
-	}
+	}*/
 
 	if (hasClass('slowZonesBtn', 'active')){
 
-		var locID = 6;
+		//var locID = 5;
+		var locID = 55  +  street_slider;
 		interventionLayerIDs.push(locID);
 
 	}
@@ -68,14 +103,16 @@ function checkInterventionBtns(interventionLayerIDs) {
 
 if (hasClass('signalTimingBtn', 'active')){
 
-	var locID = 7;
+	//var locID = 6;
+	var locID = 66 +  street_slider;
 	interventionLayerIDs.push(locID);
 
 }
 
 if (hasClass('leftTurnTrafficCalmingBtn', 'active')){
 
-	var locID = 8;
+	//var locID = 7;
+	var locID = 77 +  street_slider;
 	interventionLayerIDs.push(locID);
 
 }
@@ -88,21 +125,31 @@ if (hasClass('leftTurnTrafficCalmingBtn', 'active')){
 
 if (hasClass('VZ_IntersectionsBtn', 'active')){
 
-	var locID = 9;
+	//var locID = 8;
+	var locID = 88 +  street_slider;
 	interventionLayerIDs.push(locID);
 }
 
 if (hasClass('VZ_Corridors', 'active')){
 
-	var locID = 10;
+	//var locID = 9;
+	var locID = 99 +  street_slider;
 	interventionLayerIDs.push(locID);
 }
 
 if (hasClass('VZ_Zones', 'active')){
 
-	var locID = 11;
+	//var locID = 10;
+	var locID = 110 +  street_slider;
 	interventionLayerIDs.push(locID);
 }
+
+	if (hasClass('SSFSBtn', 'active')){
+
+		//var locID = 5;
+		var locID = 121 +  street_slider;
+		interventionLayerIDs.push(locID);
+	}
 
 	if(interventionLayerIDs.length === 0){
 
@@ -111,6 +158,9 @@ if (hasClass('VZ_Zones', 'active')){
 
 
 	interventionLayer.setVisibleLayers(interventionLayerIDs);
+
+	var streetDate = street_sliderLookup(street_slider);
+	$("#street_dateLabel").text(streetDate);
 
 }
 

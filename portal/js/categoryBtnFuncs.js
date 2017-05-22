@@ -16,45 +16,9 @@ function showLoading() {
     $('a').prop('disabled', true);
     $('a').attr('disabled', true);
 
-
-     //new June 2016
-	/* function loading() { $("#loadingImg").show(); }
-
-
-	  var timeout = function () {
-	  setInterval(function(){ loading();  }, 4000);
-
-	  clearInterval (timeout);
-	 }
-
-
-	  setTimeout(function(){
-			$("#loadingImg").hide();
-			alert("somethings up");
-		}, 4000);
-
-	   $("#loadingImg").show(0, '', function () {
-
-		setTimeout(function(){
-			$("#loadingImg").hide();
-			alert("somethings up");
-		}, 4000);
-		});*/
-
-
 		$("#loadingImg").show();
-		/*  setTimeout(function(){
-			//$("#loadingImg").hide();
-			hideLoading();
-			alert("somethings up");
-		}, 6000);*/
 
 }
-
-
-
-
-//}
 
 //show map loading image
 function hideLoading() {
@@ -66,25 +30,31 @@ clearTimeout (timeout);
     $('a').removeClass('disabled');
     $('a').prop('disabled', false);
     $('a').attr('disabled', false);
-
-
     $("#loadingImg").hide();
 }
 
 function hideSlider() {
-
     $("#sliderDiv").hide();
      $(".jqx-slider-tickscontainer").hide();
-
 }
 
 function showSlider() {
     $("#sliderDiv").show();
     $(".jqx-slider-tickscontainer").show();
     $("#sliderDiv").css("opacity", 1);
-
 }
 
+/// new March 2017
+function hideSlider_street() {
+    $("#sliderDiv_street").hide();
+     $(".jqx-slider-tickscontainer").hide();
+}
+
+function showSlider_street() {
+    $("#sliderDiv_street").show();
+    $(".jqx-slider-tickscontainer").show();
+    $("#sliderDiv_street").css("opacity", 1);
+}
 
 $(document).ready(function () {
     $("#ArterialSlowZone").prop('checked', false);
@@ -147,6 +117,8 @@ function CategoryNav(id) {
     var _layerURL, _layerID;
 
     if (id == "summaryCat") {
+
+			removeClasses('sum');
     	$("#sumLegendDiv").css("display", "block");
 			// new Jan 2017 //
 			$("#logo-stack").css("display", "none");
@@ -166,7 +138,11 @@ function CategoryNav(id) {
         $("#sliderDiv").css("display", "none");
         $("#jqxslider").css("display", "none");
         $("#jqxslider2").css("display", "none");
+				// new March 2017
+				 $("#jqxslider_street").css("display", "none");
+				 $("#sliderDiv_street").css("display", "none");
         $("#labelDiv").css("display", "none");
+				$("#street_labelDiv").css("display", "none");
         $("#date3Label").css("display", "none");
         fatality = false;
         injury = false;
@@ -177,6 +153,7 @@ function CategoryNav(id) {
 
 
 		} else if (id == "speedLimitCat") {
+			removeClasses('limit');
 
 			// new Jan 2017 //
 				$("#logo-stack").css("display", "none");
@@ -195,11 +172,17 @@ function CategoryNav(id) {
         $("#jqxslider").css("display", "none");
         $("#jqxslider2").css("display", "none");
         $("#labelDiv").css("display", "none");
+				$("#street_labelDiv").css("display", "none");
         $("#date3Label").css("display", "none");
+				//new March 2017
+				$("#sliderDiv_street").css("display", "none");
+				$("#jqxslider_street").css("display", "none");
+
 
 
 
     } else if (id == "interventionCat") {
+			removeClasses('inter');
 
 				// new Jan 2017 //
 				$("#logo-stack").css("display", "none");
@@ -218,9 +201,32 @@ function CategoryNav(id) {
         $("#jqxslider").css("display", "none");
         $("#jqxslider2").css("display", "none");
         $("#labelDiv").css("display", "none");
+				$("#street_labelDiv").css("display", "block");
         $("#date3Label").css("display", "none");
+				// new March 2017
+				$("#sliderDiv_street").css("display", "block");
+				$("#jqxslider_street").css("display", "block");
+				$("#street_dateLabel").css("display", "block");
+
+
+				// new March 2017
+				$('#jqxslider_street').bind('change', function(event) {
+							 //map.infoWindow.hide();
+							 interventionLayerIDs = [];
+							 		checkInterventionBtns(interventionLayerIDs);
+
+									// background-color: rgba(0,0,0,0.7);
+
+
+
+							// curInjuryValue = $('#jqxslider2').jqxSlider('getValue');
+				//checkStats();
+							 //fatalityYearlySet(curInjuryValue);
+				});
+
 
     } else if (id == "outreachCat") {
+			removeClasses('reach');
 			// new Jan 2017 //
 			$("#logo-stack").css("display", "none");
 
@@ -240,15 +246,26 @@ function CategoryNav(id) {
         $("#jqxslider").css("display", "none");
         $("#jqxslider2").css("display", "none");
         $("#labelDiv").css("display", "none");
+				$("#street_labelDiv").css("display", "none");
         $("#date3Label").css("display", "none");
+				// new March 2017
+				$("#sliderDiv_street").css("display", "none");
+				$("#jqxslider_street").css("display", "none");
 
 
     } else if (id == "injuryCat") {
+			$('.jqx-fill-state-normal').css('background-color', 'rgb(239,239,239)');
+			removeClasses('crash');
 
         checkCrashCatState();
         $("#sliderDiv").css("display", "block");
         $("#labelDiv").css("display", "block");
+				$("#street_labelDiv").css("display", "none");
         $("#date3Label").css("display", "block");
+				// new March 2017
+				$("#sliderDiv_street").css("display", "none");
+				$("#jqxslider_street").css("display", "none");
+
 
 
         if (monthly) {
@@ -333,6 +350,8 @@ function GhostLayerCleanup() {
 		$('#map_layers img[src*=SUMMARY_FATALITIES]').parent().remove();
 		$('#map_layers img[src*=OUTREACH]').parent().remove();
 		$('#map_layers img[src*=speed_limits]').parent().remove();
+
+
 	}
 	if (activeCategory == "outreachCat") {
 
@@ -410,4 +429,41 @@ function LayerVisibility() {
 		$('#map_layers img[src*=speed_limits]').parent().show();
 	}
 
+}
+
+
+
+function removeClasses(cat){
+
+	$('#interventionLarge').removeClass('active');
+	$('#interventionSmall').removeClass('active');
+	$('#crashLarge').removeClass('active');
+	$('#crashSmall').removeClass('active');
+	$('#interventionSmall').removeClass('active');
+	$('#interventionLarge').removeClass('active');
+	$('#speedLimitSmall').removeClass('active');
+	$('#speedLimitLarge').removeClass('active');
+	$('#outreachSmall').removeClass('active');
+	$('#outreachLarge').removeClass('active');
+	$('#summarySmall').removeClass('active');
+	$('#summaryLarge').removeClass('active');
+
+	if (cat =='crash') {
+
+		$('#crashLarge').addClass('active');
+		$('#crashSmall').addClass('active');
+	} else if (cat =='inter'){
+		$('#interventionLarge').addClass('active');
+		$('#interventionSmall').addClass('active');
+	} else if (cat == 'limit'){
+		$('#speedLimitSmall').addClass('active');
+		$('#speedLimitLarge').addClass('active');
+	} else if (cat == 'sum'){
+		$('#summarySmall').addClass('active');
+		$('#summaryLarge').addClass('active');
+	} else if (cat == 'reach'){
+		$('#outreachSmall').addClass('active');
+		$('#outreachLarge').addClass('active');
+
+	}
 }

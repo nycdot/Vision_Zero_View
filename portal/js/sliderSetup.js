@@ -50,6 +50,35 @@
 			});
 
 
+			/// new March 2017
+			$(document).ready(function () {
+							$("#jqxslider_street").jqxSlider({
+									theme: 'bootstrap',
+									value: 0,
+									min: 0,
+									max: 10,  // ticks until 2017 + all + vz only
+									mode: "fixed",
+									step: 1,
+									ticksFrequency: 1,
+									tooltip: false
+							});
+						//  createTooltip();
+							var upperTicks = $("#jqxslider .jqx-slider-tickscontainer:eq(0)").children();
+						//  var lowerTicks = $("#jqxslider .jqx-slider-tickscontainer:eq(1)").children();
+						//  for (var i = 0; i < upperTicks.length; i++) {
+								//  if (i % 12 !=0) {
+										//  $(upperTicks[i]).css("display", "none");
+											//$(lowerTicks[i]).css("display", "none");
+								//  };
+						 // };
+
+						 //tooltip.css('visibility', 'visible');
+		});
+
+
+
+
+
 
 
 function sliderSetup () {
@@ -224,9 +253,9 @@ function slider2Lookup(value) {
 		case 7:
 			locYear = "2016";
 			break;
-		case 7:
+		/*case 7:
 			locYear = "2017";
-			break;
+			break;*/
 		case 8:
 			//locYear = "As of Jan. 31st 2015";
 			locYear = updateDate2;
@@ -241,3 +270,57 @@ function slider2Lookup(value) {
 
 
 }
+
+
+ // new March 2017
+ function street_sliderLookup(value) {
+ 	var locYear;
+
+ 	switch(value) {
+ 		case 0:
+ 			locYear = "2009";
+ 			break;
+ 		case 1:
+ 			locYear = "2010";
+ 			break;
+ 		case 2:
+ 			locYear = "2011";
+ 			break;
+ 		case 3:
+ 			locYear = "2012";
+ 			break;
+ 		case 4:
+ 			locYear = "2013";
+ 			break;
+ 		case 5:
+ 			locYear = "2014";
+ 			break;
+ 		case 6:
+ 			locYear = "2015";
+ 			break;
+ 		case 7:
+ 			locYear = "2016";
+ 			break;
+
+ 		case 8:
+ 			//locYear = "As of Jan. 31st 2015";
+ 			locYear = updateDate2;
+ 			break;
+		case 9:
+			//locYear = "As of Jan. 31st 2015";
+			locYear = "ALL"
+			break;
+		case 10:
+			//locYear = "As of Jan. 31st 2015";
+			locYear = "Vision Zero: 2014-YTD"
+			break;
+ 		default:
+ 			locYear = "2009";
+ 			break;
+
+ 	}
+
+ 	return locYear;
+
+
+ }

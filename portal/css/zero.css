@@ -219,7 +219,7 @@ padding-right:0px;
 
 /* edit Aug 6th ********************/
 
-#sliderDiv {
+#sliderDiv, #sliderDiv_street{
 position: absolute;
 bottom: 0;
 left: 0;
@@ -239,6 +239,23 @@ padding: 10px;
   top: auto;
   bottom: 60px;
   left: 25px;
+  font-size: 16px;
+  z-index: 999;
+  padding: 8px 13px;
+  background-color: #FFF;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  display: none;
+}
+
+/* new March 2017*/
+
+#street_dateLabel {
+  position: absolute;
+  color: black;
+  top: auto;
+  bottom: 60px;
+  /*left: 25px;*/
   font-size: 16px;
   z-index: 999;
   padding: 8px 13px;
@@ -273,7 +290,11 @@ padding: 10px;
     margin-left:auto; margin-right: auto;
 }
 
-
+/* March 2017 */
+#jqxslider_street {
+    width: 45em !important;
+    margin-left:auto; margin-right: auto;
+}
 
  /*.tooltip {
      position: absolute;
@@ -350,6 +371,26 @@ box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 display: block;
 padding: 8px 10px 10px 10px;
 }
+
+/* new March 2017
+#street_labelDiv {
+border-radius: 4px;
+position: absolute;
+top: 10px;
+left: 25px;
+background-color: #FFF;
+opacity: 0.8;
+z-index: 39;
+box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+display: none;
+padding: 8px 10px 10px 10px;
+}
+*/
+/* new March 2017*/
+#street_labelDiv {
+display: none;
+}
+
 
 .labelDiv_info{
   border-radius: 4px;

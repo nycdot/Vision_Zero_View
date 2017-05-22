@@ -228,6 +228,13 @@ font-weight: 800;
     margin: 0 auto;
 }
 
+/* new March 2017 */
+#jqxslider_street {
+  width: 45em !important;
+  margin: 0 auto;
+}
+
+
 @media (mid-width:776;) and (max-width:882px;){
 	#jqxslider {
     width: 30em !important;
@@ -238,5 +245,12 @@ font-weight: 800;
     width: 30em !important;
     margin-left:auto; margin-right: auto;
 	}
+
+/* new March 2017 */
+  #jqxslider_street {
+    width: 30em !important;
+    margin-left:auto; margin-right: auto;
+  }
+
 
 }

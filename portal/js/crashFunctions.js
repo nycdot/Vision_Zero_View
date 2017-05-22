@@ -223,6 +223,9 @@ function injuryYearlySet(curInjuryValue){
 }
 
 function fatalityMonthlySet(curInjuryValue){
+  console.log('get here');
+  
+  
        var visibleInjuryLayerIds = [];
        var    toolTipVal = sliderLookup(curInjuryValue);
        $("#dateLabel").text(toolTipVal);;
@@ -240,12 +243,16 @@ function fatalityMonthlySet(curInjuryValue){
        else if(ped) fatality_monthly_ped_Layer.setVisibleLayers(visibleInjuryLayerIds);
        else if (bike) fatality_monthly_bike_Layer.setVisibleLayers(visibleInjuryLayerIds);
        else if (motor) fatality_monthly_motor_Layer.setVisibleLayers(visibleInjuryLayerIds);
+	   
+	//   console.log(curInjuryValue + "  " +  (curInjuryValue + 1 )  + "  " +  (curInjuryValue + 2)  + "  " +  (curInjuryValue + 3));
+	   
        
               
 }
 
                            
 function fatalityYearlySet(curInjuryValue){
+
        var visibleInjuryLayerIds = [];
        var    toolTipVal = slider2Lookup(curInjuryValue);
        $("#dateLabel").text(toolTipVal);;
@@ -581,6 +588,7 @@ else if (yearly) {
               var visibleInjuryLayerIds = [];
               if (monthly) {
                      if (all) {
+					   console.log(curInjuryValue);
                            allCrashLayersOff();
 
                            fatality_monthly_all_Layer.setVisibility(true);

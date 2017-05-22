@@ -45,6 +45,7 @@ function IdentifyTaskInit() {
 }
 
 function executeIdentifyTask(evt) {
+
        var locSliderVal;
 
        var wait = map.centerAt(evt.mapPoint);
@@ -104,7 +105,6 @@ function executeIdentifyTask(evt) {
                      }
 
                      deferred.addCallback(function(response) {
-                     	//console.log ("response length : " + response.length);
 
                            if (response.length > 0) {
                                   map.infoWindow.show(evt.mapPoint);
@@ -114,10 +114,9 @@ function executeIdentifyTask(evt) {
 
                            return dojo.map(response, function(result) {
                                  var feature = result.feature;
-                             //     console.log("how many : " + feature.length);
 
                                   var locName = result.layerName;
-                                  //console.log("layername : " + locName);
+
                                   var split, locParse;
                                   if (monthly){
                                          split = locName.split("_");
@@ -136,48 +135,33 @@ function executeIdentifyTask(evt) {
 
                                   if ((locParse == "injuries")||(locParse == "I")) {
                                   	if (all){
-                                        // if (yearly)
+
                                          {
                                          locTxt = "<table><tr><td><b>Total Injuries: </b>" + "&nbsp;" + " </td><td>${Injuries}</td></tr></table>";
 
                                          }
-                                      /*   else if (monthly){
-                                         locTxt = "<table><tr><td><b>Total Injuries: </b>" + "&nbsp; " + "</td><td>  ${Injuries}</td></tr></table>";
 
-                                         }*/
                                    	} else if (ped){
 
-                                       // if (yearly)
                                         {
                                          locTxt = "<table><tr><td><b>Pedestrian Injuries: </b>" + "&nbsp;" + " </td><td>${PedInjuries}</td></tr></table>";
 
                                          }
-                                        /* else if (monthly){
-                                         locTxt = "<table><tr><td><b>Total Injuries: </b>" + "&nbsp; " + "</td><td>  ${Injuries}</td></tr></table>";
 
-                                         }*/
                                    	} else if (motor){
 
-                                        // if (yearly)
                                          {
                                          locTxt = "<table><tr><td><b>Motorist Injuries: </b>" + "&nbsp;" + " </td><td>${MVOInjuries}</td></tr></table>";
 
                                          }
-                                       /*  else if (monthly){
-                                         locTxt = "<table><tr><td><b>Total Injuries: </b>" + "&nbsp; " + "</td><td>  ${Injuries}</td></tr></table>";
 
-                                         }*/
                                    	} else if (bike){
 
-                                         //if (yearly)
                                          {
                                          locTxt = "<table><tr><td><b>Cyclist Injuries: </b>" + "&nbsp;" + " </td><td>${BikeInjuries}</td></tr></table>";
 
                                          }
-                                        /* else if (monthly){
-                                         locTxt = "<table><tr><td><b>Total Injuries: </b>" + "&nbsp; " + "</td><td>  ${Injuries}</td></tr></table>";
 
-                                         }*/
                                    }
                                   }  if ((locParse == "fatalities" )||(locParse == "F" )) {
                                          if (all) {
@@ -200,12 +184,7 @@ function executeIdentifyTask(evt) {
                                         locTxt += "<table><tr><td><b>Cyclist Injuries: </b></td><td>" + "&nbsp; " + "  ${BikeInjuries}</td></tr></table>";
 
                                          }
-                                        /* else if (monthly){
-                                         locTxt = "<table><tr><td><b>Total Fatalities: </b></td><td>" + "&nbsp; " + "  ${Fatalities}</td></tr></table>";
-                                         locTxt += "<table><tr><td><b>Total Injuries: </b></td><td>" + "&nbsp; " + "  ${Injuries}</td></tr></table>";
 
-
-                                         }*/
 
                                   }
 
@@ -319,7 +298,6 @@ function executeIdentifyTask(evt) {
                      var deferred;
 
                      allIdentifyParams.geometry = evt.mapPoint;
-
                      allIdentifyParams.layerIds = [interventionLayerIDs];
                      allIdentifyParams.mapExtent = map.extent;
 
@@ -337,18 +315,23 @@ function executeIdentifyTask(evt) {
                      return dojo.map(response, function(result) {
                            var feature = result.feature;
                            var locName = result.layerName;
-
+                           // new March 2017
+                           var pos = locName.lastIndexOf('_');
+                           var newName= locName.substring(0,pos);
                            var locText;
+
                            var template = new esri.InfoTemplate();
-                           switch (locName){
+                          // switch (locName){
+                          switch (newName){
                                   case  "ASZ_Final_Dissolve":
+                                  console.log('get here')
                                   locTxt = "<table><tr><td><b>Corridor: </b>${CORRIDOR}</td></tr>";
                                   locTxt += "<tr><td>From" + "&nbsp;" + "${FROM_STREET}";
                                   locTxt += " To" + "&nbsp;"  + "${TO_STREET}</td></tr></table>";
                                   template.setTitle("Arterial Slow Zones");
                                   break;
 
-                                  case  "Safe_Streets_For_Seniors_preVZ":
+                                  case  "Safe_Streets_For_Seniors":
                                   locTxt = "<table><tr><td><b>Name:</b>" + "&nbsp; " + "${Name}</td></tr>";
                                   locTxt += "<tr><td><b>Year:</b>" + "&nbsp;  " + " ${Year}</td></tr></table>";
                                   template.setTitle("Safe Streets For Seniors  <br>");

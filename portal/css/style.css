@@ -108,10 +108,12 @@ new December 2016 */
     padding: 0;
   }
 
-  #jqxslider > div, #jqxslider2 > div {
+/* new March 2017 */
+
+  #jqxslider > div, #jqxslider2 > div,  #jqxslider_street > div {
     display: none;
   }
-  #jqxslider .jqx-rc-all, #jqxslider2 .jqx-rc-all {
+  #jqxslider .jqx-rc-all, #jqxslider2 .jqx-rc-all, #jqxslider_street .jqx-rc-all {
     display: block;
   }
 
@@ -119,7 +121,13 @@ new December 2016 */
     display: none;
   }
 
-  #sliderDiv {
+( new March 2017)
+  #street_dateLabel {
+    display: none;
+  }
+
+
+  #sliderDiv, #sliderDiv_street {
     height: auto !important;
   }
   #sliderDiv #date2Label {
@@ -127,7 +135,8 @@ new December 2016 */
     left: 85px;
     top: 9px;
   }
-  #sliderDiv #jqxslider, #sliderDiv #jqxslider2 {
+  /* new March 2017 */
+  #sliderDiv #jqxslider, #sliderDiv #jqxslider2, #sliderDiv_street #jqxslider_street {
     width: auto !important;
     margin: 0 !important;
     float: left;
@@ -158,6 +167,11 @@ new December 2016 */
     display: block;
   }
 
+/* new March 2017*/
+  #street_dateLabel {
+    display: block;
+  }
+
 }
 
   @media (min-width: 768px) and (max-width: 1024px) {
@@ -175,21 +189,6 @@ new December 2016 */
     }
 
   }
-
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:landscape) {
-    #logo-stack{
-    /*  width: auto;*/
-      width:58px;
-      position: absolute;
-      top: auto;
-      bottom: 110px;
-      left: 28px;
-      font-size: 16px;
-      z-index: 999;
-      display: block;
-    }
-  }
-
 
 /**********************************************
 FT01 - Off Canvas Navigation
@@ -360,6 +359,26 @@ FT02 - Mobile Map
     z-index: 8;
   }
 
+   /* new March 2017 */
+   #street_labelDiv {
+     border-radius: 4px;
+     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+     font-size: 12px;
+     height: auto;
+     top: auto;
+     left: 10px;
+     bottom: 65px;
+     padding: 6px 10px 10px 10px;
+     width: auto;
+     z-index: 8;
+     display: block;
+     position: absolute;
+     background-color: #FFF;
+     opacity: 0.8;
+
+
+   }
+
   .labelDiv_info{
     border-radius: 4px;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
@@ -376,6 +395,11 @@ FT02 - Mobile Map
   }
   #labelDiv select {
     width: 70px;
+  }
+
+  /* new March 2017 */
+  #street_labelDiv select {
+    width: 80px;
   }
 
   #logo-stack{
@@ -616,8 +640,13 @@ FT05 - Search
 /**********************************************
 FT06 - Date Slider
 ***********************************************/
+
+/* new March 2017 */
 #sliderDiv .jqx-slider-right,
-#sliderDiv .jqx-slider-left {
+#sliderDiv .jqx-slider-left,
+#sliderDiv_street .jqx-slider-right,
+#sliderDiv_street .jqx-slider-left
+ {
   margin-top: 0 !important;
   background: none !important;
   border: none !important;
@@ -626,7 +655,9 @@ FT06 - Date Slider
   padding: 0 !important;
 }
 #sliderDiv .jqx-icon-arrow-right,
-#sliderDiv .jqx-icon-arrow-left {
+#sliderDiv .jqx-icon-arrow-left,
+#sliderDiv_street .jqx-icon-arrow-right,
+#sliderDiv_street .jqx-icon-arrow-left{
   background: none;
   position: relative;
   top: -2px;
@@ -640,34 +671,42 @@ FT06 - Date Slider
   cursor: pointer;
 }
 #sliderDiv .jqx-icon-arrow-right:hover,
-#sliderDiv .jqx-icon-arrow-left:hover {
+#sliderDiv .jqx-icon-arrow-left:hover,
+#sliderDiv_street .jqx-icon-arrow-right:hover,
+#sliderDiv_street .jqx-icon-arrow-left:hover {
   color: #F26522;
 }
-#sliderDiv .jqx-icon-arrow-right {
+#sliderDiv .jqx-icon-arrow-right,
+#sliderDiv_street .jqx-icon-arrow-right  {
   content: "\e092";
 }
-#sliderDiv .jqx-icon-arrow-right:before {
+#sliderDiv .jqx-icon-arrow-right:before,
+#sliderDiv_street .jqx-icon-arrow-right:before {
   content: "\e092";
   position: absolute;
   display: block;
   top: -12px;
 }
-#sliderDiv .jqx-icon-arrow-left {
+#sliderDiv .jqx-icon-arrow-left,
+#sliderDiv_street .jqx-icon-arrow-left {
   content: "\e091";
 }
 @media (min-width: 1065px) {
-  #sliderDiv .jqx-icon-arrow-left {
+  #sliderDiv .jqx-icon-arrow-left,
+  #sliderDiv_street .jqx-icon-arrow-left {
     left: -20px;
   }
 
 }
 
 @media (min-width: 1023px) and  (max-width:1064px) {
-  #sliderDiv .jqx-icon-arrow-left {
+  #sliderDiv .jqx-icon-arrow-left,
+  #sliderDiv_street .jqx-icon-arrow-left {
     left: -5px;
   }
 }
-#sliderDiv .jqx-icon-arrow-left:before {
+#sliderDiv .jqx-icon-arrow-left:before,
+#sliderDiv_street .jqx-icon-arrow-left:before {
   content: "\e091";
   position: absolute;
   display: block;

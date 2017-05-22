@@ -14,19 +14,16 @@
 	var mapServiceDomain= window.location.host + port;
 	arcgisserver = mapServiceDomain;
 
-
-
-
-
 	
-// var basemapURL = "//"  + arcgisserver + "/arcgis/rest/services/GISAPP_GAZETTEER/NYCDOT_Basemap_2013_Grey/MapServer";   // edit path for cloud
+	var basemapURL = "//" + arcgisserver + "/arcgis/rest/services/GISAPP_GAZETTEER/NYCDOTBaseMapPale_17A/MapServer";
+
 
 	///// change date in variables to last day of most recent update month ////////////////////
 
 
-	var updateDate = "<a href='http://www.nyc.gov/html/dot/html/about/vz_datafeeds.shtml' target='blank'><b>Data</b></a> as of " + "2/28/2017";
-	var updateDate2 = "As of " + "2/28/2017"; // for dropdown menu in mobile view - index.html
-	var updateDate3 = "2/28/2017";
+	var updateDate = "<a href='http://www.nyc.gov/html/dot/html/about/vz_datafeeds.shtml' target='blank'><b>Data</b></a> as of " + "4/30/2017";
+	var updateDate2 = "2017 YTD as of " + "4/30"; // for dropdown menu in mobile view - index.html
+	var updateDate3 = "4/30/2017";
 	var updateMessage = "";
 
 
@@ -42,5 +39,5 @@
 	// slidermonth == cur year (2009=0, 2015=6, 2016=7) * 12 + cur month  (Jan == 0, Dec == 11) so, 75 => April 2015 (6*12 = 72 + 3 = 75)
 	// dropdownmonth == 0-11, Jan=0, Dec=11
 
-	sliderMonth = 97; // Feb 2017
-	dropdownMonth = 1; // Feb 2017
+	sliderMonth = 99; // April 2017
+	dropdownMonth = 3; // April 2017
