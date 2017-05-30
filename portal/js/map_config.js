@@ -10,12 +10,14 @@
 	if (isSSL == "http:") {port = ":6080";}
 	else if (isSSL == "https:") {port = ":6443";}
 
-  var domainName= window.location.host;
+	var domainName= window.location.host;
 	var mapServiceDomain= window.location.host + port;
-	arcgisserver = mapServiceDomain;
+	//arcgisserver = mapServiceDomain;
 
+	arcgisserver = "dotqagisiis03:6080"
 	
-	var basemapURL = "//" + arcgisserver + "/arcgis/rest/services/GISAPP_GAZETTEER/NYCDOTBaseMapPale_17A/MapServer";
+	//var basemapURL = "//" + arcgisserver + "/arcgis/rest/services/GISAPP_GAZETTEER/NYCDOTBaseMapPale_17A/MapServer";
+	var basemapURL = "//" + arcgisserver + "/arcgis/rest/services/GAZETTEER/NYCDOTBaseMapPale_17A/MapServer";
 
 
 	///// change date in variables to last day of most recent update month ////////////////////
