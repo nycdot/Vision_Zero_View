@@ -734,11 +734,15 @@
 																		<span style="opacity: .6">Speed Humps</span>
 																	</button>
 
-														
+																<button id="SSFSBtn" class="btn btn-default interventionBtns">
+																		<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #F57D20; opacity: .6;">$</i>
+																		<input type="checkbox" class="list_item" id="SafeStreetsForSeniors" value="6">
+																		<span style="opacity: .6">Safe Streets For Seniors</span>
+																	</button>
 
 																<button id="slowZonesBtn" class="btn btn-default interventionBtns">
 																		<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #73DFFF; opacity: .6;">$</i>
-																		<input type="checkbox" class="list_item" id="NeighborhoodSlowZone" value="6">
+																		<input type="checkbox" class="list_item" id="NeighborhoodSlowZone" value="7">
 																		<span style="opacity: .6">Neighborhood Slow Zones</span>
 																	</button>
 
@@ -748,13 +752,13 @@
 
 																<button id="signalTimingBtn" class="btn btn-default interventionBtns">
 																		<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #00E6A9; opacity: .6;">@</i>
-																		<input type="checkbox" class="list_item" id="SignalTiming" value="7">
+																		<input type="checkbox" class="list_item" id="SignalTiming" value="8">
 																		<span style="opacity: .6">25MPH Signal Retiming</span>
 																	</button>
 
 																<button id="leftTurnTrafficCalmingBtn" class="btn btn-default interventionBtns">
 																		<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #0084A8; opacity: .6;">%</i>
-																		<input type="checkbox" class="list_item" id="leftTurnTrafficCalming" value="8">
+																		<input type="checkbox" class="list_item" id="leftTurnTrafficCalming" value="9">
 																		<span style="opacity: .6">Left Turn Traffic Calming</span>
 																	</button>
 
@@ -763,26 +767,20 @@
 
 																<button id="VZ_IntersectionsBtn" class="btn btn-default interventionBtns">
 																		<i class=" icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #A80000; opacity: .6;">%</i>
-																		<input type="checkbox" class="list_item" id="VZ_Intersections" value='9'>
+																		<input type="checkbox" class="list_item" id="VZ_Intersections" value='10'>
 																		<span style="opacity: .6">Priority Intersections</span>
 																	</button>
 
 																<button id="VZ_Corridors" class="btn btn-default interventionBtns">
 																		<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #A80000; opacity: .6;">@</i>
-																		<input type="checkbox" class="list_item" id="VZ_Corridors" value="10">
+																		<input type="checkbox" class="list_item" id="VZ_Corridors" value="11">
 																		<span style="opacity: .6">Priority Corridors</span>
 																	</button>
 
 																<button id="VZ_Zones" class="btn btn-default interventionBtns">
 																		<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #FF7F7F; opacity: .6;">$</i>
-																		<input type="checkbox" class="list_item" id="VZ_Zones" value="11">
+																		<input type="checkbox" class="list_item" id="VZ_Zones" value="12">
 																		<span style="opacity: .6">Priority Areas</span>
-																	</button>
-																	
-																<button id="SSFSBtn" class="btn btn-default interventionBtns">
-																		<i class="icon-ok pull-right" style="font-family: 'icomoon'; font-size: 1em; color: #F57D20; opacity: .6;">$</i>
-																		<input type="checkbox" class="list_item" id="SafeStreetsForSeniors" value="12">
-																		<span style="opacity: .6">Safe Streets For Seniors</span>
 																	</button>
 
 
@@ -823,7 +821,10 @@
 																		<i>Speed Humps (1996-YTD)</i>
 																		<br> Speed Humps are a raised area of a roadway designed to reduce vehicle speeds. Dates reflect the first time a speed hump was installed at a location, subsequent removals and/or re-installations are not included.
 																		<br><br>
-		
+																		<i>Safe Streets for Seniors (2008-2013)</i>
+																		<br> The Safe Streets for Seniors program is an initiative aimed at increasing safety for older New Yorkers. Based on factors such as senior population density, injury crashes, and senior trip generators, DOT has selected and studied
+																		25 Senior Pedestrian Focus Areas. Within these areas, DOT evaluates potential safety improvements and also conducts education outreach to senior centers.<br>
+																		<br>
 																		<i>Neighborhood Slow Zones (2011-2016)</i>
 																		<br> The Neighborhood Slow Zone program is an application based program which takes a neighborhood area and reduces the speed limit to 20 mph. Areas are chosen based on crashes, presence of schools and other neighborhood amenities, and
 																		community support. The treatments include a mixture of markings, signage, and speed humps.
@@ -844,9 +845,6 @@
 																		<i>Vision Zero Priority Areas (study)</i>
 																		<br> Areas in each borough were ranked on a pedestrian KSI density basis. Areas were selected from most dense to least, such that, when combined, account for half of all of pedestrian KSI in the borough. Developed as part of the Borough
 																		Pedestrian Safety Action Plans.
-																		<br><br>
-																		<i>Safe Streets for Seniors (2008-present)</i>
-																		<br> The Safe Streets for Seniors program is an initiative aimed at increasing safety for older New Yorkers. Based on factors such as senior population density, injury crashes, and senior trip generators, DOT has selected and studied Senior Pedestrian Focus Areas. Within these areas, DOT evaluates potential safety improvements and also conducts educational outreach to senior centers.<br>
 																		<br><br>
 
 																		<b>Please note that the data and information on this website is for informational purposes only. While we seek to provide accurate information, please note that errors may be present and information presented may not be complete.  Accordingly, the City of New York or the New York City Department of Transportation make no representation as to the accuracy of the information or its suitability for any purpose and disclaim any liability for omissions or errors that may be contained therein.</b>
@@ -1373,7 +1371,7 @@
 							else if ($('#street_yearSelect').is(':visible')) {
 
 								var streetYear = parseInt($("#street_yearSelect").val());
-								//console.log('streetYear ' + streetYear);
+								console.log('streetYear ' + streetYear);
 								street_slider = streetYear;
 								$("#jqxslider_street").jqxSlider({
 									value: street_slider

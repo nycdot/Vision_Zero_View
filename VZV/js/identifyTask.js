@@ -166,22 +166,22 @@ function executeIdentifyTask(evt) {
                                   }  if ((locParse == "fatalities" )||(locParse == "F" )) {
                                          if (all) {
                                          locTxt = "<table><tr><td><b>Total Fatalities: </b></td><td>" + "&nbsp; " + "  ${Fatalities}</td></tr></table>";
-                                        locTxt += "<table><tr><td><b>Total Injuries: </b></td><td>" + "&nbsp; " + "  ${Injuries}</td></tr></table>";
+                                        //locTxt += "<table><tr><td><b>Total Injuries: </b></td><td>" + "&nbsp; " + "  ${Injuries}</td></tr></table>";
 
                                          }
                                          else if (motor) {
                                          locTxt = "<table><tr><td><b>Motorist Fatalities: </b></td><td>" + "&nbsp; " + "  ${MVOFatalities}</td></tr></table>";
-                                        locTxt += "<table><tr><td><b>Motorist Injuries: </b></td><td>" + "&nbsp; " + "  ${MVOInjuries}</td></tr></table>";
+                                        //locTxt += "<table><tr><td><b>Motorist Injuries: </b></td><td>" + "&nbsp; " + "  ${MVOInjuries}</td></tr></table>";
 
                                          }
                                          else if (ped) {
                                          locTxt = "<table><tr><td><b>Pedestrian Fatalities: </b></td><td>" + "&nbsp; " + "  ${PedFatalities}</td></tr></table>";
-                                        locTxt += "<table><tr><td><b>Pedestrian Injuries: </b></td><td>" + "&nbsp; " + "  ${PedInjuries}</td></tr></table>";
+                                        //locTxt += "<table><tr><td><b>Pedestrian Injuries: </b></td><td>" + "&nbsp; " + "  ${PedInjuries}</td></tr></table>";
 
                                          }
                                         else if (bike) {
                                          locTxt = "<table><tr><td><b>Cyclist Fatalities: </b></td><td>" + "&nbsp; " + "  ${BikeFatalities}</td></tr></table>";
-                                        locTxt += "<table><tr><td><b>Cyclist Injuries: </b></td><td>" + "&nbsp; " + "  ${BikeInjuries}</td></tr></table>";
+                                        //locTxt += "<table><tr><td><b>Cyclist Injuries: </b></td><td>" + "&nbsp; " + "  ${BikeInjuries}</td></tr></table>";
 
                                          }
 
@@ -398,7 +398,8 @@ function executeIdentifyTask(evt) {
 
                                   case  "Left_Turn_Traffic_Calming_Installed":
                                  // locTxt = "<table><tr><td><b>Treatment:" + "&nbsp;" + "</b>${Treatment}</td></tr>";
-                                  locTxt = "<table><tr><td><b>Date Installed:" + "&nbsp;" + "</b>${ComplDate}</td></tr></table>";
+                                 //locTxt = "<table><tr><td><b>Date Installed:" + "&nbsp;" + "</b>${ComplDate}</td></tr></table>";
+								  locTxt = "<table><tr><td><b>Treatment:" + "&nbsp;" + "</b>${completion}</td></tr></table>";
                                   template.setTitle("Left Turn Traffic Calming <br>");
                                   break;
 
@@ -654,9 +655,9 @@ function executeIdentifyTask(evt) {
 	                       }
 
                            locTxt += "<tr style='border-bottom: 1px solid black;'><td><b><h4>INTERVENTION DATA</h4></b>" + "</td><td></td></tr>";
-                           locTxt += "<tr><td><b>LPIs Installed:</b><br><span class='dateText'>2014-YTD</span>" + "&nbsp;" + " </td><td>${SUM_LPI}</td></tr>";
-                           locTxt += "<tr><td><b>Safety Projects (Intersections):</b><br><span class='dateText'> 2013-YTD " + updateDate3 +  "</span>&nbsp;" + " </td><td>${SUM_SIPIntersections}</td></tr>";
-                           locTxt += "<tr><td><b>Safety Projects  (Corridors):</b><br><span class='dateText'> 2013-YTD " + updateDate3  + "</span>&nbsp;" + " </td><td>${SUM_SIPCorridors}" + "&nbsp;" + "miles</td></tr>";
+                           locTxt += "<tr><td><b>LPIs Installed:</b><br><span class='dateText'>2009-YTD</span>" + "&nbsp;" + " </td><td>${SUM_LPI}</td></tr>";
+                           locTxt += "<tr><td><b>Safety Projects (Intersections):</b><br><span class='dateText'> 2009-YTD " + updateDate3 +  "</span>&nbsp;" + " </td><td>${SUM_SIPIntersections}</td></tr>";
+                           locTxt += "<tr><td><b>Safety Projects  (Corridors):</b><br><span class='dateText'> 2009-YTD " + updateDate3  + "</span>&nbsp;" + " </td><td>${SUM_SIPCorridors}" + "&nbsp;" + "miles</td></tr>";
                            locTxt += "<tr><td><b>Speed Humps Installed:</b>" + " </td><td>${SUM_SpeedHumps}</td></tr>";
                            locTxt += "<tr><td><b>Arterial Slow Zones:</b><br><span class='dateText'>2014</span>" + "&nbsp;" + " </td><td> ${SUM_ASZ}" + "&nbsp;" + "miles</td></tr>";
                            locTxt += "<tr><td><b>VZ Priority Corridors:</b>" + "&nbsp;" + " </td><td> ${SUM_VZ_Priority_Corridors}" + "&nbsp;" + "miles</td></tr>";
